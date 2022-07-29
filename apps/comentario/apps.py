@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CoemntarioConfig(AppConfig):
+class ComentarioConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'coemntario'
+    name = 'comentario'
