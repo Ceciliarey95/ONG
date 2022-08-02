@@ -7,7 +7,6 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
 
-# Create your models here.
 
 class Noticia(models.Model):
     titulo = models.CharField(max_length=250, null=False)
