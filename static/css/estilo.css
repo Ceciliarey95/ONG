@@ -1,3 +1,10 @@
 body {
     background : #d6e7da;
+    font-family: Arial ;
 }
+h2 {
+    text-align: center;
+    margin-top: auto;
+    font-size: 2rem;
+}
+
