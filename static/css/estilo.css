@@ -1,5 +1,5 @@
 body {
-    background : #d6e7da;
+    background-image: url('img/fondo.jpeg');
     font-family: Arial ;
 }
 h2 {
@@ -7,4 +7,3 @@ h2 {
     margin-top: auto;
     font-size: 2rem;
 }
-

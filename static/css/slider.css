@@ -9,7 +9,7 @@
 	display: flex;
 	padding: 0;
 	width: 100%;
-	animation: cambio 20s infinite alternate linear;
+	animation: cambio 10s infinite alternate linear;
     /*animation-name:cambio,animation-duration: 20s,animation-delay,animation-iteracion-count:infinite,animation-direction:alternate,
     animation-timing-funtion:linear,animation-fill-mode*/
 }

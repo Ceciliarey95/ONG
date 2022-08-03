@@ -10,5 +10,10 @@
         </ul>
     </div>
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+{% if user.is_authenticated %}
+    <p>{{user.username}}</p>
+{% else %}
+    <p>Para ver el contenido completo debe loguearse :) </p>
+{% endif %}
 {% endblock %}
     

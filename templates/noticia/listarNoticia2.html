@@ -1,0 +1,8 @@
+{% if noticia %}
+    {% for p in noticia %}
+        <h1>{{p.titulo}}</h1>
+        <p>{{p.texto}}</p>
+    {% endfor %}
+{% else %}
+<h1>Hay tabla</h1>
+{% endif %}
