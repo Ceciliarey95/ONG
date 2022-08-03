@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +9,6 @@
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 </head>
 <body>
-    <button class="btn btn-primary">Registrarse</button>
-    <button class="btn btn-primary">Iniciar sesión</button>
-    <form action="" method="post">
-        <input type="text" name="buscar" placeholder="Buscar">
-        <input type="submit" value="Noticias">
-        <input type="submit" value="Nosotros">
-        <input type="submit" value="Contacto">
-        <input type="submit" value="Misión">
-        <input type="submit" value="Visión">
-        <input type="submit" value="Lugar">
-        <input type="submit" value="Recursos">
-    </form>
     {% block contenido %}
     {% endblock %}
 </body>
