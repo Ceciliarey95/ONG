@@ -1,0 +1,13 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<div class="main-container">
+    <h1>Create Post</h1>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input class="btn btn-primary" type="submit" value="Submit Post">
+
+    </form>
+
+</div>

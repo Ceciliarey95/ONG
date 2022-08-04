@@ -1,8 +1,14 @@
+{% load static %}
 {% if object_list %}
+				
     {% for p in object_list %}
-        <h1>{{p.titulo}}</h1>
-        <p>{{p.texto}}</p>
+
+    <h1>{{p.titulo}}</h1>
+    {{p.texto|safe}}
+    <p>{{p.fecha}}</p>
+
     {% endfor %}
+
 {% else %}
-<h1>Hay tabla</h1>
+    <h1>hay tabla</h1>
 {% endif %}
