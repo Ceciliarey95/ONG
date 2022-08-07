@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 # Create your views here.
 from django.views.generic import CreateView, UpdateView, DeleteView
 from .models import Usuario
-from .forms import RegistroUsuarioFrom
+from .forms import RegistroUsuarioForm
 
 """ from django.contrib.auth.forms import UserCreationForm
 class CustomUserCreationForm(UserCreationForm):
@@ -16,12 +16,12 @@ class CustomUserCreationForm(UserCreationForm):
 
 class RegistrarUsuario(CreateView):
 	model = Usuario
-	form_class = RegistroUsuarioFrom
+	form_class = RegistroUsuarioForm
 	template_name = 'usuario/registrar.html'
 
 class ModificarUsuario(UpdateView):
 	model = Usuario
-	form_class = RegistroUsuarioFrom
+	form_class = RegistroUsuarioForm
 	template_name = 'usuario/modificar.html'
 
 class DeleteUsuario(DeleteView):

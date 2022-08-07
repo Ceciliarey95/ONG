@@ -24,11 +24,11 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Index, name='index'),
+     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('noticia/', include('apps.noticia.urls')),
     path('usuario/', include('apps.usuario.urls')),
     path('comentario/', include('apps.comentario.urls')),
     ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-urlpatterns += staticfiles_urlpatterns()
+urlpatterns += staticfiles_urlpatterns() 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

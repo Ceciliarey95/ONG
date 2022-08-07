@@ -2,28 +2,14 @@
 {% extends 'base.html'  %}
 {% load static %}
 {% block contenido %}
-    <h1>Oportunidad de cambio</h1>
-    <button class="btn btn-primary">Registrarse</button>
-    <button class="btn btn-primary">Iniciar sesión</button>
-    <li><a class="dropdown-item" href="">Cerrar Sesión</a></li>
-    <form action="" method="post">
-        <input type="text" name="buscar" placeholder="Buscar">
-        <input type="submit" value="Noticias">
-        <input type="submit" value="Nosotros">
-        <input type="submit" value="Contacto">
-        <input type="submit" value="Misión">
-        <input type="submit" value="Visión">
-        <input type="submit" value="Lugar">
-        <input type="submit" value="Recursos">
-    </form>
-    <h2>Cambio de logo haciendo referencia a los 10 años de la fundación</h2>
+    <h4>Hola! Somos la asociación civil: Oportunidad de cambio, un grupo de personas dedicadas a crear un espacio de contención para los niños en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más! Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</h4>
+    <h5>El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referncia a este logro tan importante para nuestra comunidad: </h5>
     <div class="slider">
         <ul>
             <li><img src="{%static 'img/Logo_anterior.jpeg'%}" alt=""></li>
             <li><img src="{% static 'img/Logo-modified.png' %}" alt=""></li>
         </ul>
     </div>
-    <li><a class="dropdown-item" href="">Cerrar Sesión</a></li>
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
 {% if user.is_authenticated %}
     <p>{{user.username}}</p>

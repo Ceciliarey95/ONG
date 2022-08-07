@@ -3,7 +3,6 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from .models import Noticia, Categoria 
-
 # Create your views here.
 
 class AddNoticia(CreateView):
@@ -11,6 +10,9 @@ class AddNoticia(CreateView):
     fields= ['titulo','texto','categoria','imagen']
     template_name= 'noticia/addNoticia.html'
     success_url= reverse_lazy('index')
+
+
+
 
 class MostrarNoticia(ListView):
     model = Noticia

@@ -1,8 +1,17 @@
 body {
     background-image: url('img/fondo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: Arial ;
 }
-h2 {
+h5 {
+    font-family: 'cursive';
+    text-align: center;
+    margin-top: auto;
+    font-size: 2rem;
+}
+h4 {
+    font-family: 'cursive';
     text-align: center;
     margin-top: auto;
     font-size: 2rem;
