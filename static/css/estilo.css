@@ -1,8 +1,14 @@
 body {
-    background-image: url('img/Fondo2.jpeg');
+    background-image: url('img/fondo3.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: scroll ;
     font-family: Arial ;
+}
+.logo{
+    position: relative;
+    margin-top: auto;
+    left: 600px;
 }
 h5 {
     font-family: 'cursive';

@@ -2,19 +2,23 @@
 {% extends 'base.html'  %}
 {% load static %}
 {% block contenido %}
-    <h4>Hola! Somos la asociación civil: Oportunidad de cambio, un grupo de personas dedicadas a crear un espacio de contención para los niños en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más! Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</h4>
-    <h5>El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referncia a este logro tan importante para nuestra comunidad: </h5>
-    <div class="slider">
-        <ul>
-            <li><img src="{%static 'img/Logo_anterior.jpeg'%}" alt=""></li>
-            <li><img src="{% static 'img/Logo-modified.png' %}" alt=""></li>
+    <p>Bienvenid@ {% if user.is_authenticated %} {{user.username}} {% else %}{% endif %}!! Somos la asociación civil: Oportunidad de cambio, un grupo de personas dedicadas a crear un espacio de contención para los niños en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más! Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</p>
+    <p>El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referncia a este logro tan importante para nuestra comunidad: </p>
+    <div class="container">
+        <ul class="slider">
+            <li id="slider1"><img src="{%static 'img/Logo_anterior.jpeg'%}" alt=""></li>
+            <li id="slider2"><img src="{% static 'img/Logo-modified.png' %}" alt=""></li>
+        </ul>
+        <ul class="menu">
+            <li>
+                <a href="#slider1">Logo anterior</a>
+            </li>
+            <li>
+                <a href="#slider2">Logo actualizado</a>
+            </li>
         </ul>
     </div>
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
-{% if user.is_authenticated %}
-    <p>{{user.username}}</p>
-{% else %}
-    <p>Para ver el contenido completo debe loguearse :) </p>
-{% endif %}
+    <!--<iframe src="https://www.facebook.com/plugins/video.php?height=420&href=https%3A%2F%2Fwww.facebook.com%2Foportunidadecambio%2Fvideos%2F687817455536773%2F&show_text=true&width=560&t=0" width="560" height="535" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" aria-posinset="center" ></iframe>-->
 {% endblock %}
     

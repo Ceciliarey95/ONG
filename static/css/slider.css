@@ -1,5 +1,5 @@
 .slider {
-	width: 1280px;
+	width: 500px;
     height: auto;
 	margin: 50px auto 0;
 	overflow: hidden;
@@ -9,7 +9,7 @@
 	display: flex;
 	padding: 0;
 	width: 100%;
-	animation: cambio 10s 1 alternate linear;
+	animation: cambio 15s 15s infinite normal linear;
     /*animation-name:cambio,animation-duration: 20s,animation-delay,animation-iteracion-count:infinite,animation-direction:alternate,
     animation-timing-funtion:linear,animation-fill-mode*/
 }
