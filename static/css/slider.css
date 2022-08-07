@@ -9,7 +9,7 @@
 	display: flex;
 	padding: 0;
 	width: 100%;
-	animation: cambio 10s infinite alternate linear;
+	animation: cambio 10s 1 alternate linear;
     /*animation-name:cambio,animation-duration: 20s,animation-delay,animation-iteracion-count:infinite,animation-direction:alternate,
     animation-timing-funtion:linear,animation-fill-mode*/
 }
@@ -20,7 +20,7 @@
 }
 
 .slider img {
-	width: 75%; /*tamaño de la imagen*/
+	width: 50%; /*tamaño de la imagen*/
 }
 
 @keyframes cambio {

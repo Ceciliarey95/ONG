@@ -8,7 +8,7 @@ app_name = 'apps.usuario'
 urlpatterns = [
     path('login/', LoginView.as_view(template_name="usuario/login.html"),name="login"),
     path('logout/', LogoutView.as_view(),name="logout"),
-    path('addUsuario/', RegistrarUsuario.as_view(template_name="usuario/registrar.html") ,name="addUsuario"),
+    path('addUsuario/', RegistrarUsuario.as_view(),name="addUsuario"),
     path('modificarUsuario/<str:pk>', ModificarUsuario.as_view() ,name="modificarUsuario"),
-    path('eliminarUsuario/<int:pk>', DeleteUsuario.as_view(template_name="usuario/usuario_confirm_delete.html") ,name="eliminarUsuario")
+    path('eliminarUsuario/<int:pk>', DeleteUsuario.as_view() ,name="eliminarUsuario")
 ]

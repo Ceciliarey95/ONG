@@ -18,12 +18,15 @@ class RegistrarUsuario(CreateView):
 	model = Usuario
 	form_class = RegistroUsuarioForm
 	template_name = 'usuario/registrar.html'
+	success_url = reverse_lazy('index')
 
 class ModificarUsuario(UpdateView):
 	model = Usuario
 	form_class = RegistroUsuarioForm
 	template_name = 'usuario/modificar.html'
+	success_url = reverse_lazy('index')
 
 class DeleteUsuario(DeleteView):
 	model = Usuario
 	success_url = reverse_lazy('index')
+	template_name = 'usuario/usuario_confirm_delete'
