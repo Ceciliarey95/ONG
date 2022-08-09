@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 body {
+    font-family: 'Dancing Script', cursive;
     background-image: url('img/fondo3.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: scroll ;
+    background-attachment: fixed ;
     font-family: Arial ;
+}
+.navbarSupportedContent{
+    height: 100vh;
+    background-color: darkcyan;
 }
 .logo{
     position: relative;
@@ -21,4 +27,9 @@ h4 {
     text-align: center;
     margin-top: auto;
     font-size: 2rem;
-} 
+}
+.fcc-btn{
+    background-color: darkcyan;
+    color: antiquewhite;
+    text-decoration: none;
+}

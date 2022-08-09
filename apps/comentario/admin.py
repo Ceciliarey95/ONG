@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Comentario
-# Register your models here.
+from .models import Comentarios
 
-admin.site.register(Comentario)
+admin.site.register(Comentarios)
 

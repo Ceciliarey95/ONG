@@ -1,6 +1,10 @@
+{% extends 'base.html' %}
+{% block contenido %}
 {% load static %}
 {% if noticia %}
-				
+{% if user.is_superuser %}
+<li><a target="_blank" class="nav-link" href="{% url 'apps.noticia:addNoticia' %}"> Administrar noticia</a></li>
+{% endif %}			
     {% for p in noticia %}
 
         <h1>{{p.titulo}}</h1>
@@ -14,7 +18,10 @@
         {{p.texto|safe}}
 
     {% endfor %}
+    <p href="{% url 'apps.comentario:post_idd' noticia.pk%}">{{noticia.pk}}
+    </p>
 
 {% else %}
-    <h1>hay tabla</h1>
+    <h1>No se ha encontrado la noticia</h1>
 {% endif %}
+{% endblock %}

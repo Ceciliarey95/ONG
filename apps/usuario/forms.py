@@ -8,13 +8,13 @@ from django import forms
 class RegistroUsuarioForm(UserCreationForm):
 
     class Meta:
-        model = Usuario
+        model  = Usuario
         fields = ['username','password1','password2','first_name','last_name','email', 'imagen']
 
     @transaction.atomic
     def save(self):
-        user = super().save(commit=False)
+        user              = super().save(commit=False)
         user.is_superuser = False
-        user.is_staff = False
+        user.is_staff     = False
         user.save()
         return user

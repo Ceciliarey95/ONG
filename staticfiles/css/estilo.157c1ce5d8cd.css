@@ -1,0 +1,33 @@
+body {
+    background-image: url("img/fondo3.8192ac535ff8.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed ;
+    font-family: Arial ;
+}
+.navbarSupportedContent{
+    height: 100vh;
+    background-color: darkcyan;
+}
+.logo{
+    position: relative;
+    margin-top: auto;
+    left: 600px;
+}
+h5 {
+    font-family: 'cursive';
+    text-align: center;
+    margin-top: auto;
+    font-size: 2rem;
+}
+h4 {
+    font-family: 'cursive';
+    text-align: center;
+    margin-top: auto;
+    font-size: 2rem;
+}
+.fcc-btn{
+    background-color: darkcyan;
+    color: antiquewhite;
+    text-decoration: none;
+}

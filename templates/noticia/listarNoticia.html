@@ -1,14 +1,23 @@
+{% extends 'base.html' %}
+{% block contenido %}
 {% load static %}
 {% if object_list %}
+{% if user.is_superuser %}
+<li><a target="_blank" class="nav-link" href="{% url 'apps.noticia:addNoticia' %}"> Administrar noticia</a></li>
+{% endif %}	
 				
     {% for p in object_list %}
-
+        
     <h1>{{p.titulo}}</h1>
+    {{p.imagen}}
     {{p.texto|safe}}
     <p>{{p.fecha}}</p>
+    {{p.comentario}}
+    
 
     {% endfor %}
 
 {% else %}
-    <h1>hay tabla</h1>
+    <h1>No se ha encontrado la noticia</h1>
 {% endif %}
+{% endblock %}

@@ -10,11 +10,11 @@ ALLOWED_HOSTS = ["*"]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ongdb',
-        'USER': 'root',
+        'ENGINE'  : 'django.db.backends.mysql',
+        'NAME'    : 'ongdb',
+        'USER'    : 'root',
         'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST'    : 'localhost',
+        'PORT'    : '',
     }
 }
