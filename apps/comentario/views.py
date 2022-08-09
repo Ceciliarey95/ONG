@@ -21,7 +21,7 @@ def comentario_id(request,pk):
 class AddComentario(CreateView):
     model         = Comentarios
     fields        = ['autor', 'texto', 'fecha']
-    template_name = 'usuario/comentario.html'
+    template_name = 'comentario/comentar.html'
 
 
 class MostrarComentario(ListView):

@@ -3,7 +3,7 @@
 {% load static %}
 {% if noticia %}
 {% if user.is_superuser %}
-<li><a target="_blank" class="nav-link" href="{% url 'apps.noticia:addNoticia' %}"> Administrar noticia</a></li>
+<li><a target="_blank" class="nav-link" href="{% url 'apps.noticia:AddNoticia' %}"> Administrar noticia</a></li>
 {% endif %}			
     {% for p in noticia %}
 
@@ -18,10 +18,9 @@
         {{p.texto|safe}}
 
     {% endfor %}
-    <p href="{% url 'apps.comentario:post_idd' noticia.pk%}">{{noticia.pk}}
-    </p>
+    <!--p href="{% url 'apps.comentario:AddComentario%}"></p>-->
 
 {% else %}
-    <h1>No se ha encontrado la noticia</h1>
+    <h1>No se ha encontrado la noticia</h1> 
 {% endif %}
 {% endblock %}

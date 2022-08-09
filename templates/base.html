@@ -24,29 +24,23 @@
     <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
     <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
     <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-        body {
-            font-family: 'Dancing Script', cursive;
-        }
-    </style>
 </head>
 <body>
-    <!--==========================
-    Navbar Section
-  ============================-->
-    {% block navbar %}
     <header>
+         <!--==========================
+                  Navbar Section
+         ============================-->
+    {% block navbar %}
         <p>.</p>
         <p>.</p>
-        <div class="logo float-right">
+        <!--<div class="logo float-right">-->
             <!--<img src="{% static 'img/Logo-modified.png' %}" class="logo"  height="200">--->
     <nav class="navbar fixed-top" >
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <div class="container-fluid" >
             <!-- <a class="navbar-brand" href="{% url 'index' %}">17 OBJ</a> -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                     <li class="nav-item">
                         <!-- <a class="nav-link" >Top 10</a> -->
                         <a href="{% url 'index' %}" class="nav-link" >Inicio</a> 
@@ -90,8 +84,7 @@
                                 </ul>
                             {% endif %}
                         </div>
-                    {% else %}
-                    
+                        {% else %}
                         <a target="_blank" class="nav-link" href="{% url 'apps.usuario:addUsuario' %}">Registrarse</a>
                         <a target="_blank" class="nav-link" href="{% url 'apps.usuario:login' %}">Iniciar sesión</a> 
                    
@@ -114,7 +107,7 @@
 
 {% endblock %}
    <!--==========================
-    Footer Section
+         Footer Section
   ============================-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -138,8 +131,8 @@
                 <!--<p>{{user.is_superuser }}</p>-->
             </div>
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href=www.facebook.com/oportunidaddecambio><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href="www.instagram.com/oportunidaddecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
           </ul>
         </footer>
       </div>     

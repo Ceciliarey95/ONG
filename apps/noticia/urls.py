@@ -8,4 +8,6 @@ urlpatterns = [
     path('listaNoticia/',views.MostrarNoticia.as_view(), name="listarNoticia"),
     path('listaNoticia2/', views.ListarNoticia, name="listarNoticia2"),
     path('listarCategoria/<str:categoria>',views.ListarNoticiaPorCategoria, name='listarCategoria'),
+    #path('like/', views.AddLike.as_view(), name='like' ),
+    #path('dislike/', views.AddDislike.as_view(), name='dislike' ),
 ]

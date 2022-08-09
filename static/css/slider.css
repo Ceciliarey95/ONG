@@ -8,7 +8,7 @@
 .slider ul {
 	display: flex;
 	padding: 0;
-	width: 200%;
+	width: 75%;
 	animation: cambio 15s 5s infinite normal linear;
     /*animation-name:cambio,animation-duration: 20s,animation-delay,animation-iteracion-count:infinite,animation-direction:alternate,
     animation-timing-funtion:linear,animation-fill-mode*/

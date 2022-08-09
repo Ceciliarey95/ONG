@@ -7,25 +7,21 @@ body {
     background-attachment: fixed ;
     font-family: Arial ;
 }
-.navbarSupportedContent{
+.navbar fixed-top{
     height: 100vh;
     background-color: darkcyan;
 }
-.logo{
-    position: relative;
-    margin-top: auto;
-    left: 600px;
-}
 h5 {
-    font-family: 'cursive';
+    font-family: 'Dancing Script', cursive;
     text-align: center;
     margin-top: auto;
     font-size: 2rem;
 }
 h4 {
-    font-family: 'cursive';
+    font-family: 'Dancing Script', cursive;
     text-align: center;
     margin-top: auto;
+    
     font-size: 2rem;
 }
 .fcc-btn{

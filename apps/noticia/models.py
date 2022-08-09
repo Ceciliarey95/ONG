@@ -3,6 +3,7 @@ from django.db import models
 #from apps.comentario.models import ComentariosManager, Comentarios
 from django.contrib.contenttypes.models import ContentType
 #from django.core.urlresolvers import reverse 
+from apps.usuario.models import Usuario
 
 
 class Categoria(models.Model):
@@ -21,6 +22,8 @@ class Noticia(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     imagen    = models.ImageField(upload_to='noticia', default='noticia/default.png')
     #slug      = models.SlugField(unique=True, blank=True)
+    #like = models.ManyToManyField(Usuario, blank=True,related_name='likes')
+    #dislike = models.ManyToManyField(Usuario, blank=True,related_name='dislikes')
 
     def __unicode__(self):
         return self.slug

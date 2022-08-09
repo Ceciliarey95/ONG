@@ -3,9 +3,9 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from .models import Noticia, Categoria 
-#from django.contrib.auth.mixins import LoginRequiredMixin
-#from django.views.generic.base import View
-#from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.base import View
+from django.http import HttpResponseRedirect, HttpResponse
 
 class AddNoticia(CreateView):
     model         = Noticia
@@ -36,23 +36,22 @@ def ListarNoticiaPorCategoria(request,categoria):
     return render(request,'noticia/listarNoticia2.html',context)
 
 
-"""
-class AddLike(LoginRequiredMixin, View):
+"""class AddLike(LoginRequiredMixin, View):
     def noticia(self, request, pk,*args,**kwargs):
         noticia = Noticia.objects.get(pk=pk)
 
-        is_dislike = False
+        is_dislike         = False
         for dislike in noticia.dislikes.all():
-            if dislike == request.user:
+            if dislike     == request.user:
                 is_dislike = True
                 break
 
         if is_dislike:
             noticia.dislikes.remove(request.user)
 
-        is_like = False
+        is_like         = False
         for like in noticia.likes.all():
-            if like == request.user:
+            if like     == request.user:
                 is_like = True
                 break
 
