@@ -33,7 +33,7 @@
 }
 /*__________SLIDER ABOUT US__________*/
 .slider2 {
-	width: 100%;
+	width: 75%;
     height: auto;
 	overflow: hidden;
 }
@@ -47,16 +47,17 @@
 }
 
 .slider2 li {
-	width: 100%;
+	width: 75%;
 	list-style: none;
 }
 
 .slider2 img {
-	width: auto; /*tamaño de la imagen*/
+	width: 75%; /*tamaño de la imagen*/
 	border-radius: 5px;
-	margin: auto;
-	max-width: fit-content;
+	margin-left: 25%;
+	margin-right: 25%;
     box-shadow: 0 9px 9px hsla(20, 67%, 75%, 0.31);
+	border-style: inset;
 }
 
 @keyframes cambio {
