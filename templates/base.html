@@ -35,26 +35,46 @@
         <p>.</p>
         <!--<div class="logo float-right">-->
             <!--<img src="{% static 'img/Logo-modified.png' %}" class="logo"  height="200">--->
-    <nav class="navbar fixed-top" >
+    <nav class="navbar fixed-top" id="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <div class="container-fluid" >
             <!-- <a class="navbar-brand" href="{% url 'index' %}">17 OBJ</a> -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                     <li class="nav-item">
-                        <!-- <a class="nav-link" >Top 10</a> -->
-                        <a href="{% url 'index' %}" class="nav-link" >Inicio</a> 
+                        <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                    </li>
+                    <li class="nav-item">
+                       <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}" class="nav-link" style="margin-left: 10px;">Inicio</a>
                     </li>  
+                    <li class="nav-item">
+                        <a href="#about-us" class="nav-link" >¿Quienes somos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#do" class="nav-link" >¿Que hacemos?</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="#sedes" class="nav-link" >Nuestras sedes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link" >Contacto</a>
+                    </li>
+                    <!--==========================
+                             Categorias
+                    ============================-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categorías
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <ul>
-                                    <li><a target="_blank" href="">Meriendas</a></li>
-                                    <li><a target="_blank" href="">Eventos</a></li>
-                                    <li><a target="_blank" href="">Apoyo Escolar</a></li>
-                                    <li><a target="_blank" href="">Huerta</a></li>
+                                    <li><a class="dropdown-item" target="_blank" href="">Meriendas</a></li>
+                                    <li><a class="dropdown-item" target="_blank" href="">Eventos</a></li>
+                                    <li><a class="dropdown-item" target="_blank" href="">Apoyo Escolar</a></li>
+                                    <li><a class="dropdown-item" target="_blank" href="">Huerta</a></li>
                                 </ul>
                             <!-- {% for item in categorias %}
                                 <li><a class="dropdown-item" href="{%url 'post:listarCategoria' item %}">{{item}}</a></li>
@@ -62,6 +82,9 @@
                         </ul>
                     </li>
                 </ul>
+                <!--==========================
+                             Menú
+                 ============================-->
                     {% if user.is_authenticated %}
                         <div class="dropdown">
                             <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -90,7 +113,7 @@
                    
                     {% endif %}
                     <form class="d-flex justify-content-center ms-3" action="{%url 'index'%}" method="POST">{%csrf_token%}
-                        <!--<input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">-->
+                        <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-secondary" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
                             stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" 
@@ -104,8 +127,11 @@
 {% endblock %}
 </header>
 {% block contenido %}
-
+ <!--==========================
+          index.html
+  ============================-->
 {% endblock %}
+
    <!--==========================
          Footer Section
   ============================-->
@@ -127,12 +153,11 @@
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
                 <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
                 </a>
-                <span class="text-decoration-none">© 2022 Company, Inc</span>
-                <!--<p>{{user.is_superuser }}</p>-->
+                <span class="text-decoration-none">© 2022 Oportunidad de cambio, Inc</span>
             </div>
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-muted" href=www.facebook.com/oportunidaddecambio><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-muted" href="www.instagram.com/oportunidaddecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
           </ul>
         </footer>
       </div>     

@@ -1,15 +1,14 @@
 .slider {
-	width: 1280px;
-    height: auto;
-	margin: 100px auto 0;
+	width: 75%;
+    height: 600px;
 	overflow: hidden;
+	margin-left: 25%;
 }
 
 .slider ul {
 	display: flex;
-	padding: 0;
-	width: 75%;
-	animation: cambio 15s 5s infinite normal linear;
+	width: 200%;
+	animation: cambio 15s 2s infinite alternate linear;
     /*animation-name:cambio,animation-duration: 20s,animation-delay,animation-iteracion-count:infinite,animation-direction:alternate,
     animation-timing-funtion:linear,animation-fill-mode*/
 }
@@ -20,15 +19,15 @@
 }
 
 .slider img {
-	width: 70%; /*tamaño de la imagen*/
+	width: 50%; /*tamaño de la imagen*/
 }
 
 @keyframes cambio {
 
 	0% {margin-left: 0;}
-	100% {margin-left: 0;}
+	45% {margin-left: 0;}
 	
-	100% {margin-left: -200%;}
-	200% {margin-left: -200%;}
+	50% {margin-left: -100%;}
+	100% {margin-left: -100%;}
 	
 }

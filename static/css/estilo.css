@@ -1,17 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 body {
     font-family: 'Dancing Script', cursive;
-    background-image: url('img/fondo3.jpeg');
+    background-image: linear-gradient(-225deg, #b0efdc 0%, #8f8fd1 100%);
+    background-image: linear-gradient(to top, #89bf9d 0%, #52539b 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /*background-image: url('img/fondo3.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed ;
-    font-family: Arial ;
+    background-attachment: fixed ;*/
 }
-.navbar fixed-top{
-    height: 100vh;
-    background-color: darkcyan;
+.fixed-top{
+    width: auto;
+    height: auto;
+    margin: -1% auto;
 }
-h5 {
+.bienvenida {
+    width: 1400px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    font-size: large;
+    text-align: center;
+    background-color: rgb(102, 122, 139);
+}
+.presentacion_logo{
+    width: 1450px;
+    height: auto;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    text-align: center;
+}
+h5{
     font-family: 'Dancing Script', cursive;
     text-align: center;
     margin-top: auto;
@@ -28,4 +51,25 @@ h4 {
     background-color: darkcyan;
     color: antiquewhite;
     text-decoration: none;
+}
+.title-about{
+    width: 100%;
+    margin-top: 6%;
+    text-align: center;
+    border-radius: 15px;
+}
+.about-content{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    font-size: large;
+    text-align: center;
+    background-color: rgb(102, 122, 139);
+}
+.about-img{
+    width: 100%;
+    margin-left: 5%;
 }
