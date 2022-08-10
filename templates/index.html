@@ -5,10 +5,13 @@
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <p style="color: #c2c3c5 ;"  class="bienvenida">Bienvenid@ {% if user.is_authenticated %} {{user.username}} {% else %}{% endif %}! Somos la asociación civil: Oportunidad de cambio, un grupo de personas dedicadas a crear un espacio de contención para los niños en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más! Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</p>
     <p style="color: #c2c3c5 ;" class="presentacion_logo">El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referncia a este logro tan importante para nuestra comunidad: </p>
+    <!--==========================
+         Slider Logos Section
+    ============================-->
     <div class="slider">
         <ul>
-            <li id="slider1"><img src="{%static 'img/Logo_anterior.jpeg'%}" alt=""></li>
-            <li id="slider2"><img src="{% static 'img/Logo-modified.png' %}" alt=""></li>
+            <li ><img src="{%static 'img/Logo_anterior.jpeg'%}" alt=""></li>
+            <li ><img src="{% static 'img/Logo-modified.png' %}" alt=""></li>
         </ul>
     </div>
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
@@ -19,16 +22,21 @@
         <div class="container">
           <div class="row">
             <h2 class="title-about">Acerca de nosotros:</h2>
-              <div class="about-img">
-                <figure>
-                <img src="{% static 'img/about-img.jpg' %}" alt="">
-              </div>
+            <div class="slider2">
+                <ul>
+                    <li ><img class="about-us" src="{%static 'img/cambio.png' %}" alt=""></li>
+                    <li ><img class="about-us" src="{%static 'img/cambio2.png' %}" alt=""></li>
+                    <li ><img class="about-us" src="{% static 'img/cambio3.png' %}" alt=""></li>
+                    <li ><img class="about-us" src="{% static 'img/cambio4.png' %}" alt=""></li>
+                </ul>
+            </div>
+            <link rel="stylesheet" href="{% static 'css/slider.css' %}">
             </div>
               <div class="about-content">
-                <p style="color: #c2c3c5 ;">Hola! En esta sección podrás conocer un poco mas acerca de nosotros y nuestra visión :)
+                <p style="color: #c2c3c5 ;">Nuestra visión:
                     Actualmente la ONG trabaja en tres instalaciones propias, en diferentes puntos de la localidad, a los que asisten mayoritariamente niños de barriadas carenciadas; En este contexto los comedores se convierten en un espacio de contención en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos.
-                    </p>
-                    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+                </p>
+            <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
               </div>
             </div>
       </section><!-- #about -->
@@ -38,19 +46,68 @@
     <section id="do">
         <div class="container">
           <div class="row">
-            <h2 class="title-about">¿Que hacemos?</h2>
+            <h2 class="title-about">¿Que buscamos?</h2>
               <div class="about-img">
                 <figure>
                 <img src="{% static 'img/about-img.jpg' %}" alt="">
               </div>
             </div>
               <div class="about-content">
-                <p style="color: #c2c3c5 ;">Hola! En esta sección podrás conocer un poco mas acerca de nosotros y nuestra visión :)
-                    Actualmente la ONG trabaja en tres instalaciones propias, en diferentes puntos de la localidad, a los que asisten mayoritariamente niños de barriadas carenciadas; En este contexto los comedores se convierten en un espacio de contención en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos.
-                    </p>
+                <p style="color: #c2c3c5 ;"> Nuestra Misión es:
+                    <p class="mision" style="color: #c2c3c5 ;" >-	Fomentar el desarrollo de la educación , de la salud y del bienestar social. Logrando el mejoramiento de la calidad de vida.</p>
+                    <p class="mision" style="color: #c2c3c5 ;">-	Estimular la participación civica y solidaria. Crear ámbitos de integración y recreación.</p>
+                    <p class="mision" style="color: #c2c3c5 ;">-	Promover la dignidad humana en toda su dimensión ética y cultural, particularmente la igualdad efectiva de oportunidades entre el hombre y la mujer y los derechos de la infancia.</p>
+                </p>
                     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
               </div>
             </div>
       </section><!-- #do -->
+      <!--==========================
+             Contact Section
+    ============================-->
+    <section id="contact">
+        <div class="container">
+          <div class="row">
+            <h2 class="title-about">Contacto:</h2>
+              <div class="about-img">
+                <figure>
+                <img src="{% static 'img/about-img.jpg' %}" alt="">
+              </div>
+            </div>
+              <div class="about-content">
+                <p style="color: #c2c3c5 ;">
+                    <p class="mision" style="color: #c2c3c5 ;" >-	Somos de Machagai-Chaco</p>
+                    <p class="mision" style="color: #c2c3c5 ;">-	Matricula 3171</p>
+                    <p class="mision" style="color: #c2c3c5 ;">-	La asociación fue creada el 14 de Junio de 2012</p>
+                    <p class="mision" style="color: #c2c3c5 ;">-	E-mail: oportunidaddecambiomachagai@gmail.com</p>
+                    <p class="mision" style="color: #c2c3c5 ;">-	Celular: 3734403707</p>
+                    <p class="mision" style="color: #c2c3c5 ;">-	Facebook.com/oportunidaddecambio/</p>
+                    <p class="mision" style="color: #c2c3c5 ;">-	Dirección: Las heras 345 - Machagai</p>
+                </p>
+                    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+              </div>
+            </div>
+      </section><!-- #contact -->
+      <!--==========================
+            Sedes Section
+    ============================-->
+    <section id="sedes">
+        <div class="container">
+          <div class="row">
+            <!--Aca va el titulo de la sección-->
+            <h2 class="title-about">¿Cuales son nuestras sedes?</h2>
+              <div class="about-img">
+                <figure>
+                <img src="{% static 'img/about-img.jpg' %}" alt="">
+              </div>
+            </div>
+              <div class="about-content">
+               <!--Aca va el texto de la sección--> 
+               <p style="color: #c2c3c5 ;">
+                    </p>
+                    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+              </div>
+            </div>
+      </section><!-- #sedes -->
 {% endblock %}
 <a href="{% url 'index' %}" class="nav-link" >

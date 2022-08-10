@@ -5,10 +5,8 @@ body {
     background-image: linear-gradient(to top, #89bf9d 0%, #52539b 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    /*background-image: url('img/fondo3.jpeg');
-    background-repeat: no-repeat;
+    /*background-image: url('img/fondo4.png');*/
     background-size: cover;
-    background-attachment: fixed ;*/
 }
 .fixed-top{
     width: auto;
@@ -22,9 +20,9 @@ body {
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
-    font-size: large;
+    font-size: x-large;
     text-align: center;
-    background-color: rgb(102, 122, 139);
+    background-color: rgba(102, 122, 139, 0.345);
 }
 .presentacion_logo{
     width: 1450px;
@@ -33,6 +31,7 @@ body {
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
     text-align: center;
+    background-color: rgba(102, 122, 139, 0.41);
 }
 h5{
     font-family: 'Dancing Script', cursive;
@@ -70,6 +69,11 @@ h4 {
     background-color: rgb(102, 122, 139);
 }
 .about-img{
-    width: 100%;
+    width: auto;
     margin-left: 5%;
+    border-radius: 8px;
+    box-shadow: 0 9px 9px hsla(20, 67%, 75%, 0.31);
+}
+.mision{
+    text-align: left;
 }

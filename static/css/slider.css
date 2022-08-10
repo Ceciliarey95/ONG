@@ -8,7 +8,7 @@
 .slider ul {
 	display: flex;
 	width: 200%;
-	animation: cambio 15s 2s infinite alternate linear;
+	animation: cambio 10s 2s infinite alternate linear;
     /*animation-name:cambio,animation-duration: 20s,animation-delay,animation-iteracion-count:infinite,animation-direction:alternate,
     animation-timing-funtion:linear,animation-fill-mode*/
 }
@@ -30,4 +30,46 @@
 	50% {margin-left: -100%;}
 	100% {margin-left: -100%;}
 	
+}
+/*__________SLIDER ABOUT US__________*/
+.slider2 {
+	width: 100%;
+    height: auto;
+	overflow: hidden;
+}
+
+.slider2 ul {
+	display: flex;
+	width: 400%;
+	animation: cambio 15s infinite alternate linear;
+    /*animation-name:cambio,animation-duration: 20s,animation-delay,animation-iteracion-count:infinite,animation-direction:alternate,
+    animation-timing-funtion:linear,animation-fill-mode*/
+}
+
+.slider2 li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider2 img {
+	width: auto; /*tamaño de la imagen*/
+	border-radius: 5px;
+	margin: auto;
+	max-width: fit-content;
+    box-shadow: 0 9px 9px hsla(20, 67%, 75%, 0.31);
+}
+
+@keyframes cambio {
+
+	0% {margin-left: 0;}
+	25% {margin-left: 0;}
+	
+	30% {margin-left: -100%;}
+	50% {margin-left: -100%;}
+	
+	55% {margin-left: -200%;}
+	75% {margin-left: -200%;}
+
+	80% {margin-left: -300%;}
+	100% {margin-left: -300%;}
 }
