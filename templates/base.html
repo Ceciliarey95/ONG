@@ -70,15 +70,18 @@
                         Categorías
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <ul>
+                                <!--ul>
                                     <li><a class="dropdown-item" target="_blank" href="">Meriendas</a></li>
                                     <li><a class="dropdown-item" target="_blank" href="">Eventos</a></li>
                                     <li><a class="dropdown-item" target="_blank" href="">Apoyo Escolar</a></li>
                                     <li><a class="dropdown-item" target="_blank" href="">Huerta</a></li>
+                                    {% url 'apps.noticia:listarCategoria' item %}
+                                </ul-->
+                            {% for item in noticia %}
+                                <ul>
+                                    <li><a class="dropdown-item" target="_blank" href="">{{item.categoria}}</a></li>
                                 </ul>
-                            <!-- {% for item in categorias %}
-                                <li><a class="dropdown-item" href="{%url 'post:listarCategoria' item %}">{{item}}</a></li>
-                            {% endfor %} -->
+                            {% endfor %}
                         </ul>
                     </li>
                 </ul>
@@ -91,7 +94,7 @@
                             Menú
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li>
+                                <li><a class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
                                 <li><a class="dropdown-item" href="">Botón 2</a></li>
                                 <li><a class="dropdown-item" href="">Botón 3</a></li>
                                 <li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>
@@ -108,8 +111,8 @@
                             {% endif %}
                         </div>
                         {% else %}
-                        <a target="_blank" class="nav-link" href="{% url 'apps.usuario:addUsuario' %}">Registrarse</a>
-                        <a target="_blank" class="nav-link" href="{% url 'apps.usuario:login' %}">Iniciar sesión</a> 
+                        <a class="nav-link" href="{% url 'apps.usuario:addUsuario' %}">Registrarse</a>
+                        <a class="nav-link" href="{% url 'apps.usuario:login' %}">Iniciar sesión</a> 
                    
                     {% endif %}
                     <form class="d-flex justify-content-center ms-3" action="{%url 'index'%}" method="POST">{%csrf_token%}

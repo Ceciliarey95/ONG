@@ -1,22 +1,20 @@
 {% extends 'base.html' %}
 {% block contenido %}
 {% load static %}
-{% if object_list %}
-{% if user.is_superuser %}
-<li><a target="_blank" class="nav-link" href="{% url 'apps.noticia:addNoticia' %}"> Administrar noticia</a></li>
-{% endif %}	
+{% if posts %}
+    {% if user.is_superuser %}
+    <li><a target="_blank" class="nav-link" href="{% url 'apps.noticia:addNoticia' %}"> Administrar noticia</a></li>
+    {% endif %}	
 				
-    {% for p in object_list %}
-        
-    <h1>{{p.titulo}}</h1>
-    {{p.imagen}}
-    {{p.texto|safe}}
-    <p>{{p.fecha}}</p>
-    {{p.comentario}}
-    
-
+    {% for p in posts %}
+    <!--a href="{% url 'apps.noticia:post-detail' slug=p.slug %}"-->
+        {{p.titulo}}
+        {{p.imagen}}
+        {{p.texto|truncatechars:50}}
+        {{p.fecha}}
+        {{p.comentario}}
+    </a>
     {% endfor %}
-
 {% else %}
     <h1>No se ha encontrado la noticia</h1>
 {% endif %}

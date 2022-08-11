@@ -24,7 +24,7 @@ INSTALLED_APPS   = [
 
     'apps.noticia',
     'apps.comentario',
-    'apps.usuario'
+    'apps.usuario',
 ]
 
 

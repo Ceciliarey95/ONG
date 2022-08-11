@@ -1,15 +1,16 @@
+from multiprocessing import context
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from .models import Noticia, Categoria 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.base import View
+from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect, HttpResponse
 
 class AddNoticia(CreateView):
     model         = Noticia
-    fields        = ['titulo','texto','categoria','imagen']
+    fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
     template_name = 'noticia/addNoticia.html'
     success_url   = reverse_lazy('index')
 
@@ -17,8 +18,22 @@ class MostrarNoticia(ListView):
     model         = Noticia
     template_name = 'noticia/listarNoticia.html'
 
-    """def get_queryset(self):
-        ------------------------"""
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['posts'] = Noticia.postobjects.all()
+        return context
+
+class PostDetailView(DetailView):
+    model = Noticia
+    template_name = 'noticia/post-detail.html'
+    context_object_name = 'post'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = Noticia.objects.filter(slug=self.kwargs.get('slug'))
+        return context
+
 
 def ListarNoticia(request):
     noticia = Noticia.objects.all()

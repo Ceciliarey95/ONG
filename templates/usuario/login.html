@@ -86,7 +86,7 @@ document.getElementById("eye").addEventListener("click", function () {
     <!--      Forgot Password button-->
           <button class="btn submits frgt-pass">Olvide mi contraseña</button>
     <!--     Sign Up button -->
-          <button class="btn submits sign-up">Registrarse 
+          <button class="btn submits sign-up" href="{% url 'apps.usuario:addUsuario' %}">Registrarse 
     <!--         Sign Up font icon -->
           <i class="fa fa-user-plus" aria-hidden="true"></i>
           </button>
@@ -112,10 +112,10 @@ document.getElementById("eye").addEventListener("click", function () {
 
 /* Start body rules */
 body {
-    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
-background-attachment: fixed;
-  background-repeat: no-repeat;
+    background-image: linear-gradient(-225deg, #b0efdc 0%, #8f8fd1 100%);
+    background-image: linear-gradient(to top, #89bf9d 0%, #52539b 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 
     font-family: 'Vibur', cursive;
 /*   the main font */

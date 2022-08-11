@@ -4,7 +4,10 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from .views import Index
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+#from django.conf.urls import url
+"""urlpatterns = [
+    url( r '^ tinymce /', include('tinymce.urls')),
+]"""
 
 urlpatterns = [
     path('admin/', admin.site.urls),
