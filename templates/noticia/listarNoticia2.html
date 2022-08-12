@@ -4,42 +4,37 @@
 <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 {% if noticia %}		
     {% for p in noticia %}
-    {% if user.is_authenticated %}
-    <button style="margin-left: 75% ; background-color: rgb(36, 61, 82); text-decoration-color: rgb(232, 239, 234);" class="btn btn-outline-secondary" type="button" id="dropdownMenuButton1" aria-expanded="false">Administrar noticias</button>
-{% endif %}	
+    {% if user.is_superuser %}<a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:modificarNoticia' %}">Administrar noticia</a>{%endif%}
     <div class="container">
         <h1 style="text-align: center;">{{p.titulo}}</h1>
         <h3 style="text-align: center;">{{p.subtitulo}}</h3>
         <p style="text-align: center;">{{p.fecha}}</p>
-        <!--p>{{ p.imagen }}</p-->
+        <!--*******Imagen*******-->
         <p style="margin-left: 30%;">{% if p.imagen %}<img src="{{ p.imagen.url }}"  width="550" height="400">
            {% else %}<img src="noticia/default.png"  width="550" height="400">
            {% endif %}</p>
+        {% if user.is_authenticated %}<!--Solo si esta logueado podrá ver el texto, comentar y entrar a la noticia-->
         <p style="text-align: center;">{{p.texto|safe}}</p>
-        <p>{{p.comment}}</p>
-        <!--a href="
-        <div data-gb-custom-block data-tag="url" data-0="post-detail"></div>">Comentarios: {{post.comment.count}}</a-->
-        <!--div data-gb-custom-block data-tag="for"></div-->
+        <!--*******Comentarios*******-->
         <div class="comment">
             Comentarios: {{p.comment.count}}
             <strong>{{ p.comment }}</strong>
-            <!--div class="date">{{ p.comment.publish }}</div>
+            <div class="date">{{ p.comment.publish }}</div>
             <p>{{ p.comment.texto|linebreaks }}</p>
         </div>
 
         <div data-gb-custom-block data-tag="empty">
             <p>No hay comentarios aún :)</p>
-        </div-->
-
+        </div>
         <style>
             .comment{
                 margin: 20px 0px 20px 20px;
             }
         </style>
+        {% else %}
+        <p style="text-align: center;">Para ver las noticias completas, por favor registrese o inicie sesión :)</p> 
+        {% endif %}
     {% endfor %}
-</div>
-
-{% else %}
-    <h1>Para ver las noticias completas, por favor registrese o inicie sesión :)</h1> 
 {% endif %}
+</div>
 {% endblock %}

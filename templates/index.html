@@ -3,8 +3,8 @@
 {% load static %}
 {% block contenido %}
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
-    <p style="color: #c2c3c5 ;"  class="bienvenida">Bienvenid@ {% if user.is_authenticated %} {{user.username}} {% else %}{% endif %}! Somos la asociación civil: Oportunidad de cambio, un grupo de personas dedicadas a crear un espacio de contención para los niños en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más! Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</p>
-    <p style="color: #c2c3c5 ;" class="presentacion_logo">El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referncia a este logro tan importante para nuestra comunidad: </p>
+    <p style="color: #1a263f ;"  class="bienvenida">Bienvenid@ {% if user.is_authenticated %} {{user.username}} {% else %}{% endif %}! Somos la asociación civil: Oportunidad de cambio, un grupo de personas dedicadas a crear un espacio de contención para los niños en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más! Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</p>
+    <p style="color: #1a263f ;" class="presentacion_logo">El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referncia a este logro tan importante para nuestra comunidad: </p>
     <!--==========================
          Slider Logos Section
     ============================-->
@@ -24,10 +24,10 @@
             <h2 class="title-about">Acerca de nosotros:</h2>
             <div class="slider2">
                 <ul>
-                    <li ><img class="about-us" src="{%static 'img/cambio.png' %}" width="550" height="450" alt=""></li>
-                    <li ><img class="about-us" src="{%static 'img/cambio2.png' %}" width="550" height="450" alt=""></li>
-                    <li ><img class="about-us" src="{% static 'img/cambio3.png' %}" width="550" height="450" alt=""></li>
-                    <li ><img class="about-us" src="{% static 'img/cambio4.png' %}" width="550" height="450" alt=""></li>
+                    <li ><img class="about-us" src="{%static 'img/cambio.png' %}" width='600' height="450" style="margin-left: 25%;" alt=""></li>
+                    <li ><img class="about-us" src="{%static 'img/cambio2.png' %}" width="550" height="450" style="margin-left: 25%;" alt=""></li>
+                    <li ><img class="about-us" src="{% static 'img/cambio3.png' %}" width="550" height="450" style="margin-left: 25%;" alt=""></li>
+                    <li ><img class="about-us" src="{% static 'img/cambio4.png' %}" width="550" height="450" style="margin-left: 25%;" alt=""></li>
                 </ul>
             </div>
             <link rel="stylesheet" href="{% static 'css/slider.css' %}">
@@ -49,7 +49,7 @@
             <h2 class="title-about">¿Que buscamos?</h2>
               <div class="about-img">
                 <figure>
-                <img src="{% static 'img/about-img.jpg' %}" alt="">
+                <img src="{% static 'img/about-img.jpg' %}" width="550" height="450" style="margin-left: 50%;" alt="">
               </div>
             </div>
               <div class="about-content">
@@ -71,7 +71,7 @@
             <h2 class="title-about">Contacto:</h2>
               <div class="about-img">
                 <figure>
-                <img src="{% static 'img/about-img.jpg' %}" alt="">
+                <img src="{% static 'img/about-img.jpg' %}" width="550" height="450" style="margin-left: 50%;" alt="">
               </div>
             </div>
               <div class="about-content">
@@ -98,7 +98,7 @@
             <h2 class="title-about">¿Cuales son nuestras sedes?</h2>
               <div class="about-img">
                 <figure>
-                <img src="{% static 'img/about-img.jpg' %}" alt="">
+                <img src="{% static 'img/about-img.jpg' %}" width="550" height="450" style="margin-left: 50%;" alt="">
               </div>
             </div>
               <div class="about-content">

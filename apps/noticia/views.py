@@ -8,11 +8,18 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from django.http import HttpResponseRedirect, HttpResponse
 
+
 class AddNoticia(CreateView):
     model         = Noticia
     fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
     template_name = 'noticia/addNoticia.html'
     success_url   = reverse_lazy('index')
+
+class ModificarNoticia(UpdateView):
+	model 		  = Noticia
+	form_class    = AddNoticia
+	template_name = 'usuario/modificarNoticia.html'
+	success_url   = reverse_lazy('index')
 
 class MostrarNoticia(ListView):
     model         = Noticia
@@ -33,6 +40,14 @@ class PostDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         post = Noticia.objects.filter(slug=self.kwargs.get('slug'))
         return context
+
+
+def ListarCategoria(request):
+    categoria = Categoria.objects.all()
+    context = {
+        'categoria': categoria
+    }
+    return render(request,context)
 
 
 def ListarNoticia(request):

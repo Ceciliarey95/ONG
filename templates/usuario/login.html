@@ -3,39 +3,7 @@
 {% endblock %}
 {% block contenido %}
 {% load static %}
-<!--<h6>
 <form method="post">{% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Iniciar sesión">
-</form>
-</h6>-->
-<form method="post">{% csrf_token %}
-<script>
-    
-function show() {
-    var p = document.getElementById('pwd');
-    p.setAttribute('type', 'text');
-}
-
-function hide() {
-    var p = document.getElementById('pwd');
-    p.setAttribute('type', 'password');
-}
-
-var pwShown = 0;
-
-document.getElementById("eye").addEventListener("click", function () {
-    if (pwShown == 0) {
-        pwShown = 1;
-        show();
-    } else {
-        pwShown = 0;
-        hide();
-    }
-}, false);
-
-
-</script>
 <div class="overlay">
     <!-- LOGN IN FORM by Omar Dsoky -->
     <form>
@@ -47,35 +15,6 @@ document.getElementById("eye").addEventListener("click", function () {
           <!--     A welcome message or an explanation of the login form -->
           <p>Ingrese con su usuario y contraseña</p>
        </header>
-       <!--     End  header Content  -->
-       <!--<br>
-       <div class="field-set">-->         
-          <!-- user name -->
-             <!--<span class="input-item">
-               <i class="fa fa-user-circle"></i>
-             </span-->
-            <!--   user name Input-->
-             <!--input class="form-input" id="txt-input" type="text" placeholder="@Usuario" required>
-         
-          <br-->
-         
-               <!--   Password -->
-         
-          <!--span class="input-item">
-            <i class="fa fa-key"></i>
-           </span-->
-          <!--   Password Input-->
-          <!--input class="form-input" type="password" placeholder="Contraseña" id="pwd"  name="password" required-->
-         
-    <!--      Show/hide password  -->
-         <!--span>
-            <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
-         </span>
-         
-         
-          <br-->
-    <!--        buttons -->
-    <!--      button LogIn -->
         <div>
          {{form.as_p}}
         <input type="submit" value="Iniciar sesión">

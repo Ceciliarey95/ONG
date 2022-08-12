@@ -39,8 +39,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <div class="container-fluid" >
             <!-- <a class="navbar-brand" href="{% url 'index' %}">17 OBJ</a> -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+            <div class="collapse navbar-collapse" id="navbarSupportedContentt">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
                     </li>
@@ -75,20 +75,21 @@
                                     <li><a class="dropdown-item" target="_blank" href="">Eventos</a></li>
                                     <li><a class="dropdown-item" target="_blank" href="">Apoyo Escolar</a></li>
                                     <li><a class="dropdown-item" target="_blank" href="">Huerta</a></li>
-                                    {% url 'apps.noticia:listarCategoria' item %}
+                                   
                                 </ul-->
-                            {% for item in noticia %}
                                 <ul>
-                                    <li><a class="dropdown-item" target="_blank" href="">{{item.categoria}}</a></li>
+                                    {%if noticia%}
+                                    {%for i in noticia %}
+                                    <li><a class="dropdown-item" target="_blank" href="">{{i.titulo}}</a></li>
+                                    {% endfor %}
+                                    {%endif%}
                                 </ul>
-                            {% endfor %}
-                        </ul>
+                        </ul> 
                     </li>
                 </ul>
                 <!--==========================
                              Menú
                  ============================-->
-                    {% if user.is_authenticated %}
                         <div class="dropdown">
                             <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             Menú
@@ -97,7 +98,7 @@
                                 <li><a class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
                                 <li><a class="dropdown-item" href="">Botón 2</a></li>
                                 <li><a class="dropdown-item" href="">Botón 3</a></li>
-                                <li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>
+                                {% if user.is_authenticated %}<li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
                             </ul>
                             {% if user.is_superuser %}
                             <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -110,7 +111,7 @@
                                 </ul>
                             {% endif %}
                         </div>
-                        {% else %}
+                        {% if user.is_authenticated %}{%else%}
                         <a class="nav-link" href="{% url 'apps.usuario:addUsuario' %}">Registrarse</a>
                         <a class="nav-link" href="{% url 'apps.usuario:login' %}">Iniciar sesión</a> 
                    
