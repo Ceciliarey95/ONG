@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 {% if noticia %}		
     {% for p in noticia %}
-    {% if user.is_superuser %}<a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:modificarNoticia' %}">Administrar noticia</a>{%endif%}
+    {% if user.is_superuser %}<a target="_blank" class="nav-link" href="">Administrar noticia</a>{%endif%}
     <div class="container">
         <h1 style="text-align: center;">{{p.titulo}}</h1>
         <h3 style="text-align: center;">{{p.subtitulo}}</h3>

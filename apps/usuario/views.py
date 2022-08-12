@@ -11,8 +11,6 @@ class CustomUserCreationForm(UserCreationForm):
 		#fields = UserCreationForm.Meta.fields + ('imagen')
 		template_name = 'usuario/registrar.html' """
 
-
-
 class RegistrarUsuario(CreateView):
 	model         = Usuario
 	form_class    = RegistroUsuarioForm

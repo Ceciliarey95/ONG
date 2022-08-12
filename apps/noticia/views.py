@@ -11,7 +11,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 
 class AddNoticia(CreateView):
     model         = Noticia
-    fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
+    fields        = ['titulo', 'subtitulo','texto','categoria','status','imagen']
     template_name = 'noticia/addNoticia.html'
     success_url   = reverse_lazy('index')
 
@@ -20,11 +20,10 @@ class ModificarNoticia(UpdateView):
 	form_class    = AddNoticia
 	template_name = 'usuario/modificarNoticia.html'
 	success_url   = reverse_lazy('index')
-
+    
 class MostrarNoticia(ListView):
     model         = Noticia
     template_name = 'noticia/listarNoticia.html'
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -33,14 +32,13 @@ class MostrarNoticia(ListView):
 
 class PostDetailView(DetailView):
     model = Noticia
-    template_name = 'noticia/post-detail.html'
+    template_name = 'noticia/listarNoticia2.html'
     context_object_name = 'post'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post = Noticia.objects.filter(slug=self.kwargs.get('slug'))
         return context
-
 
 def ListarCategoria(request):
     categoria = Categoria.objects.all()

@@ -78,9 +78,9 @@
                                    
                                 </ul-->
                                 <ul>
-                                    {%if noticia%}
-                                    {%for i in noticia %}
-                                    <li><a class="dropdown-item" target="_blank" href="">{{i.titulo}}</a></li>
+                                    {%if categoria%}
+                                    {%for i in categoria %}
+                                    <li><a class="dropdown-item" target="_blank" href="">{{i.nombre}}</a></li>
                                     {% endfor %}
                                     {%endif%}
                                 </ul>
@@ -97,7 +97,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
                                 <li><a class="dropdown-item" href="">Botón 2</a></li>
-                                <li><a class="dropdown-item" href="">Botón 3</a></li>
+                                <li><a class="dropdown-item" href="">Modificar usuario</a></li>
                                 {% if user.is_authenticated %}<li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
                             </ul>
                             {% if user.is_superuser %}
