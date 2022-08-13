@@ -6,11 +6,11 @@ app_name = 'apps.noticia'
 
 urlpatterns = [
     path('addNoticia/', views.AddNoticia.as_view(),name="addNoticia"),
-    path('listarNoticia/',views.MostrarNoticia.as_view(), name="listarNoticia"),
     path('listarNoticia2/', views.ListarNoticia, name="listarNoticia2"),
     path('listarPorCategoria/<str:categoria>',views.ListarNoticiaPorCategoria, name='listarPorCategoria'),
-    path('post-detail/', PostDetailView.as_view(), name='post-detail'),
-    path('modificarNoticia/<slug:slug>', views.ModificarNoticia.as_view(),name="modificarNoticia"),
+    path('post-detail/<int:pk>', PostDetailView.as_view(), name='post-detail'),
+    path('modificarNoticia/<int:pk>', views.ModificarNoticia.as_view(),name="modificarNoticia"),
+    path('eliminarNoticia/<int:pk>', views.DeleteNoticia.as_view(),name="eliminarNoticia"),
     #path('like/', views.AddLike.as_view(), name='like' ),
     #path('dislike/', views.AddDislike.as_view(), name='dislike' ),
 ]

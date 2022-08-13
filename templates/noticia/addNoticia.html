@@ -4,10 +4,7 @@
 {% block contenido %}
 {% load static %}
 <div class="main-container">
-    <h1>Crear noticia</h1>
-
     <form action="" method="POST" enctype="multipart/form-data">
-        
         <!--input class="btn btn-primary" type="submit" value="Submit Post" -->
         <form method="post">{% csrf_token %}
             <div class="overlay">

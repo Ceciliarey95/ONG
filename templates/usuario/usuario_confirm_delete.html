@@ -1,7 +1,4 @@
 {% load static %}
-<div class="main-container">
-    <h1>Create Post</h1>
-
     <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
         <p>Are you sure you want to delete "{{ object }}"?</p>
         {{form}}
@@ -9,4 +6,27 @@
 
     </form>
 
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="Eliminar">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header" style="background-color: #17a2b8; color: white;">
+            <h5 class="modal-title">Eliminar Usuario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form action="{% url 'usuarios:eliminarUsuario' user.id %}" method="post">{%csrf_token%}
+            <div class="modal-body">
+                <p>¿Está seguro que quiere darse de baja?</p>
+                
+            </div>
+            <div class="modal-footer">
+                    <button type="submit" class="btn btn-info">Confirmar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                
+            </div>
+        </form>
+        </div>
+    </div>
 </div>

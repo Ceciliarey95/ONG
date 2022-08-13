@@ -41,12 +41,29 @@
             <!-- <a class="navbar-brand" href="{% url 'index' %}">17 OBJ</a> -->
             <div class="collapse navbar-collapse" id="navbarSupportedContentt">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                    </li>
-                    <li class="nav-item">
-                       <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-                    </li>
+                    <!--==========================
+                             Menú
+                 ============================-->
+                 <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menú
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
+                        <li><a class="dropdown-item" href="">Recursos descargables</a></li>
+                        <li><a class="dropdown-item" href="">Fotos</a></li> 
+                        <li><a class="dropdown-item" href="">Información adicional</a></li>
+                        {% if user.is_authenticated %}<li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
+                    </ul>
+                    {% if user.is_superuser %}
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar noticias</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar comentarios</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar categorias</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
                     <li class="nav-item">
                         <a href="{% url 'index' %}" class="nav-link" style="margin-left: 10px;">Inicio</a>
                     </li>  
@@ -59,71 +76,18 @@
                     <li class="nav-item">
                         <a href="#contact" class="nav-link" >Contacto</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#sedes" class="nav-link" >Nuestras sedes</a>
-                        </li>
-                    <!--==========================
-                             Categorias
-                    ============================-->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorías
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <!--ul>
-                                    <li><a class="dropdown-item" target="_blank" href="">Meriendas</a></li>
-                                    <li><a class="dropdown-item" target="_blank" href="">Eventos</a></li>
-                                    <li><a class="dropdown-item" target="_blank" href="">Apoyo Escolar</a></li>
-                                    <li><a class="dropdown-item" target="_blank" href="">Huerta</a></li>
-                                   
-                                </ul-->
-                                <ul>
-                                    {%if categoria%}
-                                    {%for i in categoria %}
-                                    <li><a class="dropdown-item" target="_blank" href="">{{i.nombre}}</a></li>
-                                    {% endfor %}
-                                    {%endif%}
-                                </ul>
-                        </ul> 
-                    </li>
-                </ul>
-                <!--==========================
-                             Menú
-                 ============================-->
-                        <div class="dropdown">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Menú
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
-                                <li><a class="dropdown-item" href="">Botón 2</a></li>
-                                <li><a class="dropdown-item" href="">Modificar usuario</a></li>
-                                {% if user.is_authenticated %}<li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
-                            </ul>
-                            {% if user.is_superuser %}
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Administrar
-                            </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Crear noticia</a></li>
-                                    <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Modificar noticia</a></li>
-                                    <li><a target="_blank" class="dropdown-item" href="">Eliminar usuario</a></li>
-                                </ul>
-                            {% endif %}
-                        </div>
+                
                         {% if user.is_authenticated %}{%else%}
                         <a class="nav-link" href="{% url 'apps.usuario:addUsuario' %}">Registrarse</a>
                         <a class="nav-link" href="{% url 'apps.usuario:login' %}">Iniciar sesión</a> 
                    
                     {% endif %}
-                    <form class="d-flex justify-content-center ms-3" action="{%url 'index'%}" method="POST">{%csrf_token%}
-                        <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-secondary" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
-                            stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" 
-                            cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-                        </button>
-                    </form>
+                    <li class="nav-item">
+                        <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                    </li>
+                    <li class="nav-item">
+                       <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                    </li> 
             </div>
         </div>
     </nav>

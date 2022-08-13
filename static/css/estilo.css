@@ -10,7 +10,7 @@ body {
 }
 .fixed-top{
     width: auto ;
-    height: auto;
+    height: 1%;
     margin: -1% auto;
     display: block;
     background-color: #435278b3;

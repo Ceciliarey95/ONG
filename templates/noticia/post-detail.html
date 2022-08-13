@@ -5,6 +5,7 @@
 <li><a target="_blank" class="nav-link" href=""> Administrar noticia</a></li>
 {% endif %}
     <!--Post Detail View-->
+    {%for post in noticia%}
     {{post.titulo}}
     {{post.imagen}}
     {{post.texto|truncatechars:50}}
@@ -20,7 +21,7 @@
 <div data-gb-custom-block data-tag="empty">
     <p>No hay comentarios aún :)</p>
 </div>
-
+{%endif%}
 <style>
     .comment{
         margin: 20px 0px 20px 20px;

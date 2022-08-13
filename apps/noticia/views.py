@@ -19,23 +19,10 @@ class ModificarNoticia(UpdateView):
 	form_class    = AddNoticia
 	template_name = 'usuario/modificarNoticia.html'
 	success_url   = reverse_lazy('index')
-    
-class MostrarNoticia(ListView):
-    model         = Noticia
-    template_name = 'noticia/listarNoticia.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['posts'] = Noticia.postobjects.all()
-        return context
-
-class ListarCategoria(DetailView):
-    model = Categoria
-    
 
 class PostDetailView(DetailView):
     model = Noticia
-    template_name = 'noticia/listarNoticia2.html'
+    template_name = 'noticia/post-detail.html'
     context_object_name = 'post'
 
     def get_context_data(self, **kwargs):
@@ -43,10 +30,18 @@ class PostDetailView(DetailView):
         post = Noticia.objects.filter(slug=self.kwargs.get('slug'))
         return context
 
+class DeleteNoticia(DeleteView):
+	model 		  = Noticia
+	template_name = 'noticia/noticia_confirm_delete.html'
+	success_url   = reverse_lazy('index')
+
 def ListarNoticia(request):
     noticia = Noticia.objects.all()
+    categoria = Categoria.objects.all()
+    
     context = {
-        'noticia':noticia
+        'noticia':noticia,
+        'categoria': categoria,
     }
     return render(request,'noticia/listarNoticia2.html',context)
 
