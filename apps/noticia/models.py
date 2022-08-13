@@ -5,8 +5,10 @@ from django.utils import timezone
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=250, null=False)
+
     def get_queryset(self):
         return Categoria.objects.nombre
+
     def __str__(self):
         return self.nombre
 
@@ -23,7 +25,6 @@ class Noticia(models.Model):
     )
 
     titulo    = models.CharField(max_length=250, null=False)
-    subtitulo = models.TextField(max_length=90, null=True, blank=True)
     fecha     = models.DateTimeField(auto_now_add=True)
     texto     = models.TextField(null=False) 
     activo    = models.BooleanField(default=True)

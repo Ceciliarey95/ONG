@@ -15,6 +15,42 @@
         </ul>
     </div>
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <div class="form-row field-categoria">
+            
+            
+      <div>
+          
+          
+              <label class="required" for="id_categoria">Categoria:</label>
+              
+                  <div class="related-widget-wrapper">
+<select name="categoria" required id="id_categoria">
+<option value="">---------</option>
+
+<option value="1">Tardes</option>
+
+<option value="2" selected>eventos</option>
+
+<option value="3">huerta</option>
+
+</select>
+
+<a class="related-widget-wrapper-link change-related" id="change_id_categoria"
+  data-href-template="/admin/noticia/categoria/__fk__/change/?_to_field=id&amp;_popup=1"
+  title="Modificar categoria seleccionados/as"><img src="/static/admin/img/icon-changelink.svg" alt="Modificar"></a><a class="related-widget-wrapper-link add-related" id="add_id_categoria"
+  href="/admin/noticia/categoria/add/?_to_field=id&amp;_popup=1"
+  title="Agregar otro/a categoria"><img src="/static/admin/img/icon-addlink.svg" alt="Agregar"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_categoria"
+  data-href-template="/admin/noticia/categoria/__fk__/delete/?_to_field=id&amp;_popup=1"
+  title="Eliminar categoria seleccionados/as"><img src="/static/admin/img/icon-deletelink.svg" alt="Eliminar"></a>
+
+</div>
+              
+          
+          
+      </div>
+  
+</div>
+
     <!--==========================
       About Us Section
     ============================-->

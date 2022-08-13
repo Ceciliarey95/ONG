@@ -1,12 +1,11 @@
 from multiprocessing import context
+from sre_constants import CATEGORY_UNI_LINEBREAK
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from .models import Noticia, Categoria 
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
-from django.http import HttpResponseRedirect, HttpResponse
 
 
 class AddNoticia(CreateView):
@@ -30,6 +29,10 @@ class MostrarNoticia(ListView):
         context['posts'] = Noticia.postobjects.all()
         return context
 
+class ListarCategoria(DetailView):
+    model = Categoria
+    
+
 class PostDetailView(DetailView):
     model = Noticia
     template_name = 'noticia/listarNoticia2.html'
@@ -39,14 +42,6 @@ class PostDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         post = Noticia.objects.filter(slug=self.kwargs.get('slug'))
         return context
-
-def ListarCategoria(request):
-    categoria = Categoria.objects.all()
-    context = {
-        'categoria': categoria
-    }
-    return render(request,context)
-
 
 def ListarNoticia(request):
     noticia = Noticia.objects.all()
@@ -59,7 +54,7 @@ def ListarNoticiaPorCategoria(request,categoria):
     categoria2 = Categoria.objects.filter(nombre=categoria)
     noticia    = Noticia.objects.filter(categoria=categoria2[0].id)
     context    = {
-        'noticia' : noticia,
+        'noticia' : noticia
     }
     return render(request,'noticia/listarNoticia2.html',context)
 

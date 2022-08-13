@@ -4,7 +4,21 @@
 <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 {% if noticia %}		
     {% for p in noticia %}
-    {% if user.is_superuser %}<a target="_blank" class="nav-link" href="">Administrar noticia</a>{%endif%}
+    {% if user.is_superuser %}<a target="_blank" class="" href="">Administrar noticia</a>{%endif%}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Categorías
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul>
+                    {%for i in categoria %}
+                    <li><a class="dropdown-item" target="_blank" href="{% url 'apps.noticia:listarPorCategoria' nombre %}">{{i.nombre}}</a></li>
+                    {% endfor %}
+                </ul>
+        </ul> 
+    </li>
+</ul>
+
     <div class="container">
         <h1 style="text-align: center;">{{p.titulo}}</h1>
         <h3 style="text-align: center;">{{p.subtitulo}}</h3>
