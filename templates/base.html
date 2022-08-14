@@ -24,8 +24,10 @@
     <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
     <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
     <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+	<a href="" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
     <header>
          <!--==========================
                   Navbar Section
@@ -49,10 +51,10 @@
                     Menú
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
-                        <li><a class="dropdown-item" href="">Recursos descargables</a></li>
-                        <li><a class="dropdown-item" href="">Fotos</a></li> 
-                        <li><a class="dropdown-item" href="">Información adicional</a></li>
+                        <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
+                        <li><a target="_blank" class="dropdown-item" href="">Recursos descargables</a></li>
+                        <li><a target="_blank" class="dropdown-item" href="">Fotos</a></li> 
+                        
                         {% if user.is_authenticated %}<li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
                     </ul>
                     {% if user.is_superuser %}
@@ -129,5 +131,24 @@
           </ul>
         </footer>
       </div>     
+      <style>
+        .whatsapp {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  z-index:100;
+}
+
+.whatsapp-icon {
+  margin-top:13px;
+}
+      </style>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block navbar %}
 <!--==========================
-          Categorias
+          Navbar
 ============================-->
 <nav class="navbar fixed-top" id="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
@@ -18,8 +18,8 @@
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Agregar noticias</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:modificarNoticia' noticia.id %}"> Modificar noticia</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:eliminarNoticia' noticia.id %}"> Eliminar noticia</a></li>
+                            <li><a target="_blank" class="dropdown-item" href=""> Modificar noticia</a></li>
+                            <li><a target="_blank" class="dropdown-item" href=""> Eliminar noticia</a></li>
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar comentarios</a></li>
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar categorias</a></li>
                         </ul>
@@ -30,7 +30,7 @@
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <ul>
                 {%for i in categoria %}
-                <li><a class="dropdown-item" target="_blank" href="{% url 'apps.noticia:listarPorCategoria' categoria.nombre %}">{{i.nombre}}</a></li>
+                <li><a class="dropdown-item" target="_blank" href="">{{i.nombre}}</a></li>
                 {% endfor %}
             </ul>
     </ul> 
@@ -59,37 +59,16 @@
 
     {% for p in noticia %}
                 
-    <div class="container" style="margin-top: 10%; ">
-        <h1 href="{% url 'apps.noticia:post-detail' %}" style="text-align: center;">{{p.titulo}}</h1>
+    <div class="container" style="margin-top: 8%; ">
+        <h1 href="" style="text-align: center;">{{p.titulo}}</h1>
         <h3 style="text-align: center;">{{p.subtitulo}}</h3>
         <p style="text-align: center;">{{p.fecha}}</p>
-        <!--*******Imagen*******-->
+
         <p style="margin-left: 30%;">{% if p.imagen %}<img src="{{ p.imagen.url }}"  width="550" height="400">
            {% else %}<img src="noticia/default.png"  width="550" height="400">
            {% endif %}</p>
-        {% if user.is_authenticated %}<!--Solo si esta logueado podrá ver el texto, comentar y entrar a la noticia-->
-        <p style="text-align: center;">{{p.texto|safe}}</p>
-        <!--*******Comentarios*******-->
-        <div class="comment">
-            Comentarios: {{p.comment.count}}
-            <strong>{{ p.comment }}</strong>
-            <div class="date">{{ p.comment.publish }}</div>
-            <p>{{ p.comment.texto|linebreaks }}</p>
-        </div>
-
-        <div data-gb-custom-block data-tag="empty">
-            <p>No hay comentarios aún :)</p>
-        </div>
-        <style>
-            .comment{
-                margin: 20px 0px 20px 20px;
-            }
-        </style>
-        {% else %}
-        <p style="text-align: center;">Para ver las noticias completas, por favor registrese o inicie sesión :)</p> 
-        {% endif %}
+       <a href="{% url 'apps.noticia:readpost' p.id %}" class="btn btn-primary" style="margin-left: 30%;">Leer Más</a>
     {% endfor %}
 {% endif %}
 </div>
-
 {% endblock %}

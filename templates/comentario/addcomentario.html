@@ -1,0 +1,38 @@
+<div class="row justify-content-md-center ">
+    <div class="col-md-6">
+      <div class="list-group-item gap-3 py-3" aria-current="true">
+        <form method="POST">{%csrf_token%}
+            <div class="mb-3">
+                {{ form.as_p }}
+            </div>
+            {% if user.is_authenticated %}
+                <input class="btn btn-outline-secondary"type="submit" value="Comentar"/> 
+            {% else %}
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Comentar
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Error Comentario</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Usted tiene que iniciar sesión para poder comentar o registrarse
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-outline-secondary" href="{% url 'apps.usuario:login' %}" target="_blank">iniciar sesión</a>
+                                <a class="btn btn-outline-secondary" href="{% url 'apps.usuario:login' %}" target="_blank">Registrarse</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            
+        </form>
+      </div>
+    </div>
+</div> 

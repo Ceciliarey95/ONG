@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}{{titulo}}{%endblock %}
+{% block contenido %}
+{% load static %}
+<div class="container">
+    <article class="blog-post">
+        <div class="row justify-content-md-center mt-3 mb-3">
+            <div class="col-md-6">
+                <h1 class="fs-1 text-center">{{p.titulo}}</h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center" >
+            <div class="col-md-3">
+                <strong class="fw-bold">{{p.categoria}}</strong>
+            </div>
+            <div class="col-md-3">
+                <p class="fw-normal text-end">{{p.fecha}}</p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center mb-3">
+            <div class="col-md-6">
+                <img src="{{ p.image.url }}"  width="550" height="400">
+            </div>
+        </div>
+        <div class="row justify-content-md-center mb-3">
+            <div class="col-md-6">
+                <p class="fst-italic text-break">{{p.texto}}</p>
+            </div>
+        </div>
+        <div class="comment">
+            Comentarios: {{comentarios.count}}
+        {% include 'comentario/listarcomentario.html' %}
+        <div class="mb-3">
+            {% include 'comentario/addcomentario.html' %}
+        </div>
+        
+    </article>
+    
+</div>
+{%endblock %}

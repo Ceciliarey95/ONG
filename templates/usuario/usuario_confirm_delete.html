@@ -3,9 +3,7 @@
         <p>Are you sure you want to delete "{{ object }}"?</p>
         {{form}}
         <input type="submit" value="Confirm">
-
     </form>
-
 </div>
 <div class="modal" tabindex="-1" role="dialog" id="Eliminar">
     <div class="modal-dialog" role="document">
@@ -19,7 +17,6 @@
         <form action="{% url 'usuarios:eliminarUsuario' user.id %}" method="post">{%csrf_token%}
             <div class="modal-body">
                 <p>¿Está seguro que quiere darse de baja?</p>
-                
             </div>
             <div class="modal-footer">
                     <button type="submit" class="btn btn-info">Confirmar</button>

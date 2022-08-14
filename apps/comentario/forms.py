@@ -1,6 +1,13 @@
 from django import forms
+from .models import Comentarios
 
-class FormComentarios(forms.Form):
-    content_type = forms.CharField(widget=forms.HiddenInput)
-    object_id    = forms.IntegerField(widget=forms.HiddenInput)
-    texto        = forms.CharField(widget=forms.Textarea)
+class ComentarioForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['texto'].widget.attrs.update({'rows': '3'})
+
+    class Meta:
+        model = Comentarios
+        fields = ['texto']
+        exclude = ['noticia']
