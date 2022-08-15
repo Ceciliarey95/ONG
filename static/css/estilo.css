@@ -14,7 +14,7 @@ body {
     background-image: url('img/fondo5.jpg');
 }
 .bienvenida {
-    width: 1400px;
+    width:auto;
     height: auto;
     border-radius: 5px;
     margin: 2% auto;
