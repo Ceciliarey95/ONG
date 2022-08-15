@@ -21,7 +21,7 @@
                             <li><a target="_blank" class="dropdown-item" href=""> Modificar noticia</a></li>
                             <li><a target="_blank" class="dropdown-item" href=""> Eliminar noticia</a></li>
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar comentarios</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar categorias</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Administrar categorias</a></li>
                         </ul>
                     {% endif %}
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,19 +30,19 @@
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <ul>
                 {%for i in categoria %}
-                <li><a class="dropdown-item" target="_blank" href="">{{i.nombre}}</a></li>
+                <li><a class="dropdown-item" href="{% url 'apps.noticia:listarPorCategoria' i.nombre %}">{{i.nombre}}</a></li>
                 {% endfor %}
             </ul>
     </ul> 
     <li class="nav-item">
-    <form class="d-flex justify-content-center ms-3" action="{%url 'index'%}" method="POST">{%csrf_token%}
-        <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-secondary" type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
-            stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" 
-            cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-        </button>
-    </form>
+        <form class="d-flex justify-content-center ms-3" action="/" method="GET">
+            <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
+                stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" 
+                cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+            </button>
+        </form>
 </li class="nav-item"> 
 </li>
 </ul>
@@ -54,6 +54,9 @@
 {% block contenido %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+ <div class="container">
+        <div class="mbr-section-head">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Noticias</strong></h4>
 
 {% if noticia %}	
 
@@ -70,5 +73,7 @@
        <a href="{% url 'apps.noticia:readpost' p.id %}" class="btn btn-primary" style="margin-left: 30%;">Leer Más</a>
     {% endfor %}
 {% endif %}
+</div>
+</div>
 </div>
 {% endblock %}

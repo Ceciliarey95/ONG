@@ -4,6 +4,27 @@
           Navbar
 ============================-->
 <nav class="navbar fixed-top" id="fixed-top">
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="/">
+                            <img src="/Proyecto Integrador/ONG/static/img/Logo-modified.png"
+                                alt="Asociación Civil Oportunidad de Cambio" style="height: 5.8rem;">
+                        </a>
+                    </span>
+
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                    data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <div class="container-fluid" >
             <!-- <a class="navbar-brand" href="{% url 'index' %}">17 OBJ</a> -->
@@ -35,13 +56,14 @@
             </ul>
     </ul> 
     <li class="nav-item">
-    <form class="d-flex justify-content-center ms-3" action="{%url 'index'%}" method="POST">{%csrf_token%}
-        <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-secondary" type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
-            stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" 
-            cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-        </button>
+        <form class="d-flex justify-content-center ms-3" action="/" method="GET">
+            <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
+                stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" 
+                cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+            </button>
+        </form>
     </form>
 </li class="nav-item"> 
 </li>

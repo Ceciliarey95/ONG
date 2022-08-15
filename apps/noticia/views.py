@@ -10,15 +10,22 @@ from apps.comentario.forms import ComentarioForm
 
 class AddNoticia(CreateView):
     model         = Noticia
-    fields        = ['titulo', 'subtitulo','texto','categoria','status','imagen']
+    fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
     template_name = 'noticia/addNoticia.html'
     success_url   = reverse_lazy('index')
 
-class ModificarNoticia(UpdateView):
-	model 		  = Noticia
-	form_class    = AddNoticia
-	template_name = 'usuario/modificarNoticia.html'
-	success_url   = reverse_lazy('index')
+class AddCategoria(CreateView):
+    model         = Categoria
+    fields        = ['nombre', 'id']
+    template_name = 'noticia/addCategoria.html'
+    success_url   = reverse_lazy('index')
+
+def modificarNoticia(request,id):
+    noticia    = Noticia.objects.filter(id=id)
+    context    = {
+        'noticia' : noticia
+    }
+    return render(request,'noticia/modificarNoticia.html',context)
 
 class DeleteNoticia(DeleteView):
 	model 		  = Noticia
@@ -26,8 +33,8 @@ class DeleteNoticia(DeleteView):
 	success_url   = reverse_lazy('index')
 
 def ListarNoticia(request):
-    noticia = Noticia.objects.all()
-    categoria = Categoria.objects.all()
+    noticia    = Noticia.objects.all()
+    categoria  = Categoria.objects.all()
     
     context = {
         'noticia':noticia,
@@ -35,13 +42,16 @@ def ListarNoticia(request):
     }
     return render(request,'noticia/listarNoticia2.html',context)
 
+def botonCategoria(request):
+    categorias = Categoria.objects.filter()
+
 def ListarNoticiaPorCategoria(request,categoria):
     categoria2 = Categoria.objects.filter(nombre=categoria)
     noticia    = Noticia.objects.filter(categoria=categoria2[0].id)
     context    = {
         'noticia' : noticia
     }
-    return render(request,'noticia/listarNoticia2.html',context)
+    return render(request,'noticia/listarPorCategoria.html',context)
 
 
 def ListarNoticiaPorFecha(request,fecha):
@@ -49,7 +59,7 @@ def ListarNoticiaPorFecha(request,fecha):
     context    = {
         'noticia' : noticia
     }
-    return render(request,'noticia/listarNoticia2.html',context)
+    return render(request,'noticia/listarPorFecha.html',context)
 
 def noticias(request):
     noticias = Noticia.objects.get(all)
@@ -61,13 +71,13 @@ def ExistePost(id):
             return i
     return None
 
-
 def ReadPost(request, id):
 	try:
-		posts = ExistePost(id)
+		posts   = ExistePost(id)
 	except Exception:
-		posts = Noticia.objects.get(id=id)
+		posts   = Noticia.objects.get(id=id)
 	comentarios = Comentarios.objects.filter(noticia=id)
+    
 
 	form = ComentarioForm(request.POST or None)
 	if form.is_valid():
@@ -84,62 +94,6 @@ def ReadPost(request, id):
 		'titulo': 'post',
 		'posts': posts,
 		'form': form,
-		'comentarios': comentarios
+		'comentarios': comentarios,
 	}
 	return render(request,'noticia/post.html', context)
-
-"""class AddLike(LoginRequiredMixin, View):
-    def noticia(self, request, pk,*args,**kwargs):
-        noticia = Noticia.objects.get(pk=pk)
-
-        is_dislike         = False
-        for dislike in noticia.dislikes.all():
-            if dislike     == request.user:
-                is_dislike = True
-                break
-
-        if is_dislike:
-            noticia.dislikes.remove(request.user)
-
-        is_like         = False
-        for like in noticia.likes.all():
-            if like     == request.user:
-                is_like = True
-                break
-
-        if not is_like:
-            noticia.likes.add(request.user)
-
-        if is_like:
-            noticia.likes.remove(request.user)
-
-        next = request.POST.get('next','/')
-        return HttpResponseRedirect(next)
-
-class AddDislike(LoginRequiredMixin, View):
-    def noticia(self, request, pk,*args,**kwargs):
-        noticia = Noticia.objects.get(pk=pk)
-
-        is_like = False
-        for like in noticia.likes.all():
-            if like == request.user:
-                is_like = True
-                break
-
-        if is_like:
-            noticia.likes.remove(request.user)
-
-        is_dislike = False
-        for dislike in noticia.dislikes.all():
-            if dislike == request.user:
-                is_dislike = True
-                break
-
-        if not is_dislike:
-            noticia.dislikes.add(request.user)
-
-        if is_dislike:
-            noticia.dislikes.remove(request.user)
-
-        next = request.POST.get('next','/')
-        return HttpResponseRedirect(next)"""

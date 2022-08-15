@@ -2,6 +2,16 @@
 {% block title %}{{titulo}}{%endblock %}
 {% block contenido %}
 {% load static %}
+    {% if user.is_superuser %}
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a target="_blank" class="dropdown-item" href=""> Modificar noticia</a></li>
+            <li><a target="_blank" class="dropdown-item" href=""> Eliminar noticia</a></li>
+            <li><a target="_blank" class="dropdown-item" href=""> Administrar comentarios</a></li>
+            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar categorias</a></li>
+        </ul>
+        {% endif %}
+        
 <div class="container">
     <article class="blog-post">
         <div class="row justify-content-md-center mt-3 mb-3">
@@ -29,7 +39,7 @@
         </div>
         <div class="comment">
             Comentarios: {{comentarios.count}}
-        {% include 'comentario/listarcomentario.html' %}
+            {% include 'comentario/listarcomentario.html' %}
         <div class="mb-3">
             {% include 'comentario/addcomentario.html' %}
         </div>
@@ -37,4 +47,5 @@
     </article>
     
 </div>
+
 {%endblock %}

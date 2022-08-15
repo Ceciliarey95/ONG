@@ -1,19 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 body {
-    font-family: 'Dancing Script', cursive;
-    background-image: linear-gradient(-225deg, #b0efdc 0%, #8f8fd1 100%);
-    background-image: linear-gradient(to top, #89bf9d 0%, #52539b 100%);
-    background-attachment: fixed;
+    background-image: url('img/fondo5.jpg');
     background-repeat: no-repeat;
-    /*background-image: url('img/fondo4.png');*/
-    /*background-size: cover;*/
+    background-attachment: scroll;
+    font-family: 'Dancing Script', cursive;
+    background-size:contain;
 }
 .fixed-top{
     width: auto ;
     height: 1%;
     margin: -1% auto;
     display: block;
-    background-color: #435278b3;
+    background-image: url('img/fondo5.jpg');
 }
 .bienvenida {
     width: 1400px;
@@ -65,13 +63,12 @@ h4 {
     padding: 2%;
     font-size: large;
     text-align: center;
-    background-color: rgb(102, 122, 139);
+    background-color: rgba(169, 190, 208, 0.658);
 }
 .about-img{
     width: auto;
     margin-left: 5%;
-    border-radius: 8px;
-    box-shadow: 0 9px 9px hsla(20, 67%, 75%, 0.31);
+    box-shadow: 0 9px 9px hsla(0, 0%, 100%, 0.31);
 }
 .mision{
     text-align: left;

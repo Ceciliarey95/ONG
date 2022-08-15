@@ -3,6 +3,29 @@
 {% load static %}
 {% block contenido %}
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <div class="container">
+      <main id="main">
+      <section id="intro" class="">
+          <div id="carouselExampleControls" class="carousel slide" style="color:#1a263f" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{% static 'img/juegos1.jpg' %}" class="d-block w-75" style="margin-left: 10%;" height="450">
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'img/juegos2.jpg' %}" class="d-block w-75"  style="margin-left: 10%;" height="450">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" style="color:#1a263f" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" style="color:#1a263f" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+      </section><!-- #intro -->
+      </div>
     <p style="color: #1a263f ;"  class="bienvenida">Bienvenid@ {% if user.is_authenticated %} {{user.username}} {% else %}{% endif %}! Somos la asociación civil: Oportunidad de cambio, un grupo de personas dedicadas a crear un espacio de contención para los niños en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más! Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</p>
     <p style="color: #1a263f ;" class="presentacion_logo">El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referencia a este logro tan importante para nuestra comunidad: </p>
     <!--==========================
@@ -15,44 +38,10 @@
         </ul>
     </div>
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
-    <div class="form-row field-categoria">
-            
-            
-      <div>
-          
-          
-              <label class="required" for="id_categoria">Categoria:</label>
-              
-                  <div class="related-widget-wrapper">
-<select name="categoria" required id="id_categoria">
-<option value="">---------</option>
-
-<option value="1">Tardes</option>
-
-<option value="2" selected>eventos</option>
-
-<option value="3">huerta</option>
-
-</select>
-{% if user.is_superuser %}
-<a class="related-widget-wrapper-link change-related" id="change_id_categoria"
-  data-href-template="/admin/noticia/categoria/__fk__/change/?_to_field=id&amp;_popup=1"
-  title="Modificar categoria seleccionados/as"><img src="/static/admin/img/icon-changelink.svg" alt="Modificar"></a><a class="related-widget-wrapper-link add-related" id="add_id_categoria"
-  href="/admin/noticia/categoria/add/?_to_field=id&amp;_popup=1"
-  title="Agregar otro/a categoria"><img src="/static/admin/img/icon-addlink.svg" alt="Agregar"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_categoria"
-  data-href-template="/admin/noticia/categoria/__fk__/delete/?_to_field=id&amp;_popup=1"
-  title="Eliminar categoria seleccionados/as"><img src="/static/admin/img/icon-deletelink.svg" alt="Eliminar"></a>
-  {% endif %}
-</div>
-              
-          
-          
-      </div>
-  
-</div>
+    
 
     <!--==========================
-      About Us Section
+           About Us Section
     ============================-->
     <section id="about-us">
         <div class="container">
@@ -69,7 +58,7 @@
             <link rel="stylesheet" href="{% static 'css/slider.css' %}">
             </div>
               <div class="about-content">
-                <p style="color: #c2c3c5 ;">Nuestra visión:
+                <p style="color: #1a263f ;">Nuestra visión:
                     Actualmente la ONG trabaja en tres instalaciones propias, en diferentes puntos de la localidad, a los que asisten mayoritariamente niños de barriadas carenciadas; En este contexto los comedores se convierten en un espacio de contención en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos.
                 </p>
             <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
@@ -89,10 +78,10 @@
               </div>
             </div>
               <div class="about-content">
-                <p style="color: #c2c3c5 ;"> Nuestra Misión es:
-                    <p class="mision" style="color: #c2c3c5 ;" >-	Fomentar el desarrollo de la educación , de la salud y del bienestar social. Logrando el mejoramiento de la calidad de vida.</p>
-                    <p class="mision" style="color: #c2c3c5 ;">-	Estimular la participación civica y solidaria. Crear ámbitos de integración y recreación.</p>
-                    <p class="mision" style="color: #c2c3c5 ;">-	Promover la dignidad humana en toda su dimensión ética y cultural, particularmente la igualdad efectiva de oportunidades entre el hombre y la mujer y los derechos de la infancia.</p>
+                <p style="color:  #1a263f;"> Nuestra Misión es:
+                    <p class="mision" style="color: #1a263f ;" >-	Fomentar el desarrollo de la educación , de la salud y del bienestar social. Logrando el mejoramiento de la calidad de vida.</p>
+                    <p class="mision" style="color: #1a263f;">-	Estimular la participación civica y solidaria. Crear ámbitos de integración y recreación.</p>
+                    <p class="mision" style="color: #1a263f ;">-	Promover la dignidad humana en toda su dimensión ética y cultural, particularmente la igualdad efectiva de oportunidades entre el hombre y la mujer y los derechos de la infancia.</p>
                 </p>
                     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
               </div>
@@ -108,14 +97,14 @@
             
             </div>
               <div class="about-content">
-                <p style="color: #c2c3c5 ;">
-                    <p class="mision" style="color: #c2c3c5 ;" >- Machagai-Chaco</p>
-                    <p class="mision" style="color: #c2c3c5 ;">-	Matricula 3171</p>
-                    <p class="mision" style="color: #c2c3c5 ;">-	La asociación fue creada el 14 de Junio de 2012</p>
-                    <p class="mision" style="color: #c2c3c5 ;">-	E-mail: oportunidaddecambiomachagai@gmail.com</p>
-                    <p class="mision" style="color: #c2c3c5 ;">-	Celular: 3734403707</p>
-                    <p class="mision" style="color: #c2c3c5 ;">-	Facebook.com/oportunidaddecambio/</p>
-                    <p class="mision" style="color: #c2c3c5 ;">-	Dirección: Las heras 345 - Machagai</p>
+                <p style="color:  #1a263f;">
+                    <p class="mision" style="color:  #1a263f ;" >- Machagai-Chaco</p>
+                    <p class="mision" style="color:  #1a263f;">-	Matricula 3171</p>
+                    <p class="mision" style="color:  #1a263f;">-	La asociación fue creada el 14 de Junio de 2012</p>
+                    <p class="mision" style="color:  #1a263f ;">-	E-mail: oportunidaddecambiomachagai@gmail.com</p>
+                    <p class="mision" style="color:  #1a263f;">-	Celular: 3734403707</p>
+                    <p class="mision" style="color:  #1a263f;">-	Facebook.com/oportunidaddecambio/</p>
+                    <p class="mision" style="color:  #1a263f;">-	Dirección: Las heras 345 - Machagai</p>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.4650484862577!2d-60.05455814370389!3d-26.915898070549012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9446ba94ac7896cd%3A0x61f20224831a6fe0!2sLas%20Heras%20345%2C%20Machagai%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1660479432952!5m2!1ses-419!2sar" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </p>
                     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">

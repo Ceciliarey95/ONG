@@ -4,8 +4,7 @@ from .models import Noticia, Categoria
 
 @admin.register(Noticia)
 class AuthorAdmin(admin.ModelAdmin):
-    list_display        = ('titulo', 'id', 'status', 'slug')
-    prepopulated_fields = {'slug': ('titulo',), }
+    list_display        = ('titulo', 'id','activo','fecha', 'categoria')
 
 admin.site.register(Categoria)
 

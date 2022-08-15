@@ -1,4 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 
 def Index(request):
-    return render(request, 'index.html')
+    try:
+        if request.GET['fecha'] is not None:
+            return redirect('post/listarFecha/'+request.GET['fecha'])
+    except :
+        return render(request, 'Index.html')

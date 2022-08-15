@@ -2,7 +2,7 @@
 	width: 75%;
     height: 600px;
 	overflow: hidden;
-	margin-left: 25%;
+	
 }
 
 .slider ul {
@@ -16,10 +16,12 @@
 .slider li {
 	width: 100%;
 	list-style: none;
+	
 }
 
 .slider img {
 	width: 50%; /*tamaño de la imagen*/
+	margin-left: 25%;
 }
 
 @keyframes cambio {
@@ -53,11 +55,6 @@
 
 .slider2 img {
 	width: 75%; /*tamaño de la imagen*/
-	border-radius: 5px;
-	margin-left: 25%;
-	margin-right: 25%;
-    box-shadow: 0 9px 9px hsla(20, 67%, 75%, 0.31);
-	border-style: inset;
 }
 
 @keyframes cambio {

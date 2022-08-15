@@ -25,6 +25,7 @@
     <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
     <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 <body>
 	<a href="" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
@@ -39,30 +40,32 @@
             <!--<img src="{% static 'img/Logo-modified.png' %}" class="logo"  height="200">--->
     <nav class="navbar fixed-top" id="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-        <div class="container-fluid" >
-            <!-- <a class="navbar-brand" href="{% url 'index' %}">17 OBJ</a> -->
+        <div class="container-fluid" style="background-image: url('img/fondo2.jpg');">
             <div class="collapse navbar-collapse" id="navbarSupportedContentt">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <!--==========================
                              Menú
-                 ============================-->
+                    ============================-->
                  <div class="dropdown">
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Menú
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
                         <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
                         <li><a target="_blank" class="dropdown-item" href="">Recursos descargables</a></li>
                         <li><a target="_blank" class="dropdown-item" href="">Fotos</a></li> 
                         
                         {% if user.is_authenticated %}<li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
                     </ul>
-                    {% if user.is_superuser %}
+                        {% if user.is_superuser %}
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar noticias</a></li>
+                        <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar noticias</button>
+                            <ul >
+                                <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}">Agregar Noticia</a></li>
+                            </ul>
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar comentarios</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar categorias</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Administrar categorias</a></li>
                         </ul>
                     {% endif %}
                 </div>
@@ -78,18 +81,17 @@
                     <li class="nav-item">
                         <a href="#contact" class="nav-link" >Contacto</a>
                     </li>
-                
                         {% if user.is_authenticated %}{%else%}
                         <a class="nav-link" href="{% url 'apps.usuario:addUsuario' %}">Registrarse</a>
                         <a class="nav-link" href="{% url 'apps.usuario:login' %}">Iniciar sesión</a> 
-                   
-                    {% endif %}
+                        {% endif %}
                     <li class="nav-item">
                         <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
                     </li>
                     <li class="nav-item">
                        <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
                     </li> 
+                    <div id='logo'></div><!-- li con id Logo relacionado al css -->
             </div>
         </div>
     </nav>
@@ -131,24 +133,6 @@
           </ul>
         </footer>
       </div>     
-      <style>
-        .whatsapp {
-  position:fixed;
-  width:60px;
-  height:60px;
-  bottom:40px;
-  right:40px;
-  background-color:#25d366;
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  font-size:30px;
-  z-index:100;
-}
 
-.whatsapp-icon {
-  margin-top:13px;
-}
-      </style>
 </body>
 </html>

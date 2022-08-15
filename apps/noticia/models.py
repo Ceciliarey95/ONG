@@ -11,11 +11,6 @@ class Categoria(models.Model):
 
 
 class Noticia(models.Model):
-
-    options = (
-        ('draft','Borrador'),
-        ('published', 'Publicado')
-    )
     titulo    = models.CharField(max_length=250, null=False)
     subtitulo = models.TextField(max_length=90, null=True, blank=True)
     fecha     = models.DateTimeField(auto_now_add=True)
@@ -24,8 +19,6 @@ class Noticia(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     imagen    = models.ImageField(upload_to='noticia', default='noticia/default.png')
     published = models.DateTimeField(default=timezone.now)
-    slug      = models.SlugField(max_length=250, unique_for_date='published', null=False,unique=True)
-    status    = models.CharField(max_length=10, choices=options, default='draft')
     
 
     class Meta:
