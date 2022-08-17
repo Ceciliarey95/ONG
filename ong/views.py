@@ -6,4 +6,4 @@ def Index(request):
         if request.GET['fecha'] is not None:
             return redirect('post/listarFecha/'+request.GET['fecha'])
     except :
-        return render(request, 'Index.html')
+        return render(request, 'index.html')
