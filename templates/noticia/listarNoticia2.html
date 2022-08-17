@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block navbar %}
+
 <!--==========================
           Navbar
 ============================-->
@@ -18,7 +20,6 @@
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Agregar noticias</a></li>
-                            <li><a target="_blank" class="dropdown-item" href=""> Modificar noticia</a></li>
                             <li><a target="_blank" class="dropdown-item" href=""> Eliminar noticia</a></li>
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar comentarios</a></li>
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Administrar categorias</a></li>
@@ -39,7 +40,7 @@
             <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-secondary" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
-                stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" 
+                stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Buscar noticias</title><circle cx="10.5" 
                 cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
             </button>
         </form>

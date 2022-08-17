@@ -7,7 +7,6 @@
     {% endif %}	
 				
     {% for p in posts %}
-    <!--a href="{% url 'apps.noticia:post-detail' slug=p.slug %}"-->
         {{p.titulo}}
         {{p.imagen}}
         {{p.texto|truncatechars:50}}

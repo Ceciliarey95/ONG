@@ -6,9 +6,6 @@ from .views import Index
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.auth.views import PasswordResetDoneView, PasswordResetView,PasswordResetConfirmView,PasswordResetCompleteView
 #from django.conf.urls import url
-"""urlpatterns = [
-    url( r '^ tinymce /', include('tinymce.urls')),
-]"""
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -19,12 +19,10 @@ class AddCategoria(CreateView):
     template_name = 'noticia/addCategoria.html'
     success_url   = reverse_lazy('index')
 
-def modificarNoticia(request,id):
-    noticia    = Noticia.objects.filter(id=id)
-    context    = {
-        'noticia' : noticia
-    }
-    return render(request,'noticia/modificarNoticia.html',context)
+class ModificarNoticia(UpdateView):
+    noticia       = Noticia
+    fields        =  ['titulo', 'subtitulo','texto','categoria','imagen']
+    template_name = 'noticia/modificarNoticia.html' 
 
 class DeleteNoticia(DeleteView):
 	model 		  = Noticia
@@ -77,7 +75,6 @@ def ReadPost(request, id):
 		posts   = Noticia.objects.get(id=id)
 	comentarios = Comentarios.objects.filter(noticia=id)
     
-
 	form = ComentarioForm(request.POST or None)
 	if form.is_valid():
 		if request.user.is_authenticated:

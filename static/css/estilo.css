@@ -1,20 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 body {
     height: calc(100% - 10px);
-    padding-top: 70px;
-    background-image: url('img/fondo7.jpg');
-    background-repeat: no-repeat;
+    background-position: center center;
     background-attachment: fixed;
     font-family: 'Dancing Script', cursive;
     background-size:cover ;
 }
-
+.fondocss {
+    position: fixed;
+    top:0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 0
+    }
 .fixed-top{
+    font-size: x-large;
+    padding: auto;
+    margin-bottom: auto;
     width: auto ;
     height: 1%;
     display: block;
 }
-.bienvenida {
+.bienvenida { 
     width:auto;
     height: auto;
     border-radius: 5px;

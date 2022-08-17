@@ -6,7 +6,7 @@
     {% if user.is_superuser %}
     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a target="_blank" class="dropdown-item" href=""> Modificar noticia</a></li>
+            <li><a class="dropdown-item" href=""> Modificar noticia</a></li>
             <li><a target="_blank" class="dropdown-item" href=""> Eliminar noticia</a></li>
             <li><a target="_blank" class="dropdown-item" href=""> Administrar comentarios</a></li>
             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar categorias</a></li>
