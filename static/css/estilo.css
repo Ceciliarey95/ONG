@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 body {
-    background-image: url('img/fondo5.jpg');
+    height: calc(100% - 10px);
+    padding-top: 70px;
+    background-image: url('img/fondo7.jpg');
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     font-family: 'Dancing Script', cursive;
-    background-size:contain;
+    background-size:cover ;
 }
+
 .fixed-top{
     width: auto ;
     height: 1%;
-    margin: -1% auto;
     display: block;
-    background-image: url('img/fondo5.jpg');
 }
 .bienvenida {
     width:auto;
@@ -63,7 +64,7 @@ h4 {
     padding: 2%;
     font-size: large;
     text-align: center;
-    background-color: rgba(169, 190, 208, 0.658);
+    background-color: rgba(41, 45, 68, 0.712);
 }
 .about-img{
     width: auto;

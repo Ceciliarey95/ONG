@@ -20,7 +20,25 @@
                     <div>
                         {{form.as_p}}
                         {{form.media}}
-                    <input type="submit" value="Guardar">
+                        
+                        <input class="btn btn-outline-secondary"type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Guardar" /> 
+                         <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Noticia cargada</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Su noticia fue cargada con éxito!
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-outline-secondary" href="{% url 'index' %}" target="_blank">Volver al inicio</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                    </div>
                    </div>
                   </div>
@@ -62,7 +80,7 @@
             }
             /* form Container */
             form .con {
-                display: -webkit-flex;
+                display: -webkit-flex ;
                 display: flex;
               
                 -webkit-justify-content: space-around;

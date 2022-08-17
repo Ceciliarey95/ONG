@@ -34,26 +34,22 @@
                   Navbar Section
          ============================-->
     {% block navbar %}
-        <p>.</p>
-        <p>.</p>
-        <!--<div class="logo float-right">-->
-            <!--<img src="{% static 'img/Logo-modified.png' %}" class="logo"  height="200">--->
-    <nav class="navbar fixed-top" id="fixed-top">
+    <nav class="navbar fixed-top" id="fixed-top" style="margin-top: 1%;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-        <div class="container-fluid" style="background-image: url('img/fondo2.jpg');">
-            <div class="collapse navbar-collapse" id="navbarSupportedContentt">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="container-fluid" style="width: fit-content;">
+            <div class="collapse navbar-collapse" style="height: 50px; text-align: center ; margin-top: -1% auto" id="navbarSupportedContentt">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                     <!--==========================
                              Menú
                     ============================-->
                  <div class="dropdown">
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Menú
                     </button>
                     <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
-                        <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
-                        <li><a target="_blank" class="dropdown-item" href="">Recursos descargables</a></li>
-                        <li><a target="_blank" class="dropdown-item" href="">Fotos</a></li> 
+                        <li><a  class="dropdown-item" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
+                        <li><a  class="dropdown-item" href="">Recursos descargables</a></li>
+                        <li><a  class="dropdown-item" href="">Fotos</a></li> 
                         
                         {% if user.is_authenticated %}<li><a class="dropdown-item" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
                     </ul>
@@ -69,15 +65,19 @@
                         </ul>
                     {% endif %}
                 </div>
-                    <li class="nav-item">
-                        <a href="{% url 'index' %}" class="nav-link" style="margin-left: 10px;">Inicio</a>
-                    </li>  
+                <li class="nav-item">
+                    <a href="{% url 'index'%}" class="nav-link" >Inicio</a>
+                </li>
                     <li class="nav-item">
                         <a href="#about-us" class="nav-link" >¿Quienes somos?</a>
                     </li>
+                    
                     <li class="nav-item">
                         <a href="#do" class="nav-link" >¿Que buscamos?</a>
                     </li>
+                    <a class="navbar-brand" href="#">
+                        <img id="logo" style="height: 100px; width: 100px; margin-left: -1%;" src="static/img/Logo-modified.png" >
+                    </a>
                     <li class="nav-item">
                         <a href="#contact" class="nav-link" >Contacto</a>
                     </li>

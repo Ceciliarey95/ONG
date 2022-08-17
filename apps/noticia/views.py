@@ -12,7 +12,6 @@ class AddNoticia(CreateView):
     model         = Noticia
     fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
     template_name = 'noticia/addNoticia.html'
-    success_url   = reverse_lazy('index')
 
 class AddCategoria(CreateView):
     model         = Categoria

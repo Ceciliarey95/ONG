@@ -9,10 +9,9 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
 
-
 class Noticia(models.Model):
     titulo    = models.CharField(max_length=250, null=False)
-    subtitulo = models.TextField(max_length=90, null=True, blank=True)
+    subtitulo = models.CharField(max_length=90, null=True, blank=True)
     fecha     = models.DateTimeField(auto_now_add=True)
     texto     = models.TextField(null=False) 
     activo    = models.BooleanField(default=True)
