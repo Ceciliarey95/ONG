@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 body {
     height: calc(100% - 10px);
-    background-position: center center;
+    background-image: linear-gradient(-225deg, #b0efdc 0%, #8f8fd1 100%);
+    background-image: linear-gradient(to top, #89bf9d 0%, #52539b 100%);
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
     font-family: 'Dancing Script', cursive;
     background-size:cover ;
 }
@@ -12,7 +15,7 @@ body {
     left: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: 0
+    z-index: 0;
     }
 .fixed-top{
     font-size: x-large;
@@ -74,11 +77,10 @@ h4 {
     text-align: center;
     background-color: rgba(41, 45, 68, 0.712);
 }
-.about-img{
-    width: auto;
-    margin-left: 5%;
-    box-shadow: 0 9px 9px hsla(0, 0%, 100%, 0.31);
-}
+
 .mision{
     text-align: left;
+}
+header {
+    display: block;
 }

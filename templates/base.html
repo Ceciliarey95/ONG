@@ -28,23 +28,21 @@
     
 </head>
 <body>
-
-    <video class="fondocss" loop="loop" autoplay="autoplay" >
-        <source src="static/css/vid/videofondo2.mp4" type="video/mp4"></video> 
     <header>
          <!--==========================
                   Navbar Section
          ============================-->
     {% block navbar %}
     
-    <nav class="navbar fixed-top" id="fixed-top" style="margin-top: -1.5%;text-align: center ;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px; text-align: center ;" >
+    <nav class="navbar fixed-top" id="fixed-top" style="margin-top: -1.5%;text-align: center ;background-color: #25d366;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px; text-align: center ;background-color: #25d366;" >
         <a class="navbar-brand" href="#">
             <img id="logo" style="height: 120px; width: 120px; margin-left: 1%; margin-top: 35%; " src="static/img/Logo-modified.png" >
         </a>
-        <div class="container-fluid" style="width: fit-content; height: 30px;">
-            <div class="collapse navbar-collapse" style="text-align: center ; margin-top: 0% auto" id="navbarSupportedContentt">
+        <div class="container-fluid" style="width: fit-content; height: 30px; color: #25d366;">
+            <div class="collapse navbar-collapse" style="text-align: center ; margin-top: 0% auto; color: #25d366;" id="navbarSupportedContentt">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                    
                     <!--==========================
                              Menú
                     ============================-->
@@ -89,10 +87,10 @@
                         <a class="nav-link" href="{% url 'apps.usuario:login' %}">Iniciar sesión</a> 
                         {% endif %}
                     <li class="nav-item">
-                        <li class="ms-3"><a class="text-muted" style="font-size: x-large ;" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                        <li class="ms-3"><a class="text-muted" style="font-size: x-large ;" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="40" height="40"><use xlink:href="#instagram"></use></svg></a></li>
                     </li>
                     <li class="nav-item">
-                       <li class="ms-3"><a class="text-muted" style="font-size: x-large ;" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                       <li class="ms-3"><a class="text-muted" style="font-size: x-large ;" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="40" height="40"><use xlink:href="#facebook"></use></svg></a></li>
                     </li> 
                     <div id='logo'></div><!-- li con id Logo relacionado al css -->
             </div>
@@ -102,6 +100,7 @@
 
 {% endblock %}
 </header>
+
 {% block contenido %}
  <!--==========================
           index.html
