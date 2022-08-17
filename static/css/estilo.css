@@ -37,7 +37,7 @@ body {
     background-color: rgba(193, 208, 221, 0.541);
 }
 .presentacion_logo{
-    width: 1450px;
+    width:auto;
     height: auto;
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(104, 41%, 77%, 0.44);
