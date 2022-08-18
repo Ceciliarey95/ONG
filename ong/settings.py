@@ -1,3 +1,4 @@
+from distutils.debug import DEBUG 
 from pathlib import Path
 from django.urls import reverse_lazy
 
@@ -9,6 +10,7 @@ AUTH_USER_MODEL    ='usuario.Usuario'
 LOGIN_REDIRECT_URL = reverse_lazy('index')
 LOGOUT_REDIRECT_URL= reverse_lazy('index')
 
+# Application definition
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY       = 'django-insecure-v^&kl^=vv6n*%nd2@%su*64!scvh3#x1c#q(6#+0ldd+cvwc5_'
 
