@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('CANDARAI.TTF');
 body {
     height: calc(100% - 10px);
     background-image: linear-gradient(-225deg, #b0efdc 0%, #8f8fd1 100%);
@@ -6,7 +6,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Candara', cursive;
     background-size:cover ;
 }
 .fondocss {
@@ -46,13 +46,13 @@ body {
     background-color: rgba(193, 208, 221, 0.541);
 }
 h5{
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Candara', cursive;
     text-align: center;
     margin-top: auto;
     font-size: 2rem;
 }
 h4 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Candara', cursive;
     text-align: center;
     margin-top: auto;
     
