@@ -1,52 +1,78 @@
 {% extends 'base.html' %}
 {% block title %}{{titulo}}{%endblock %}
-{% block contenido %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
-    {% if user.is_superuser %}
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href=""> Modificar noticia</a></li>
-            <li><a target="_blank" class="dropdown-item" href=""> Eliminar noticia</a></li>
-            <li><a target="_blank" class="dropdown-item" href=""> Administrar comentarios</a></li>
-            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar categorias</a></li>
-        </ul>
-        {% endif %}
-        
-<div class="container">
-    <article class="blog-post">
-        <div class="row justify-content-md-center mt-3 mb-3">
-            <div class="col-md-6">
-                <h1 class="fs-1 text-center">{{p.titulo}}</h1>
-            </div>
-        </div>
-        <div class="row justify-content-md-center" >
-            <div class="col-md-3">
-                <strong class="fw-bold">{{p.categoria}}</strong>
-            </div>
-            <div class="col-md-3">
-                <p class="fw-normal text-end">{{p.fecha}}</p>
-            </div>
-        </div>
-        <div class="row justify-content-md-center mb-3">
-            <div class="col-md-6">
-                <img src="{{ p.image.url }}"  width="550" height="400">
-            </div>
-        </div>
-        <div class="row justify-content-md-center mb-3">
-            <div class="col-md-6">
-                <p class="fst-italic text-break">{{p.texto}}</p>
-            </div>
-        </div>
-        <div class="comment">
-            Comentarios: {{comentarios.count}}
-            {% include 'comentario/listarcomentario.html' %}
-        <div class="mb-3">
-            {% include 'comentario/addcomentario.html' %}
-        </div>
-        
-    </article>
-    
-</div>
+{% block navbar %}
 
+<!--==========================
+          Navbar
+============================-->
+<nav class="navbar fixed-top" id="fixed-top" style="margin-top: -1.5%;text-align: center ;font-family: 'Dancing Script', cursive;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px; text-align: center ;">
+        <a class="navbar-brand" href="#">
+            <img id="logo" style="height: 120px; width: 120px; margin-left: 1%; margin-top: 35%; " src="{% static 'img/Logo-modified.png' %}" >
+        </a>
+        <div class="container-fluid" style="width: fit-content; height: 30px; " >
+            <div class="collapse navbar-collapse" id="navbarSupportedContentt">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}" class="nav-link" >Inicio</a>
+                    </li class="nav-item"> 
+                    {% if user.is_superuser %}
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Agregar noticias</a></li>
+                            <li><a target="_blank" class="dropdown-item" href=""> Eliminar noticia</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar comentarios</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Administrar categorias</a></li>
+                        </ul>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</nav>
+{%endblock%}
+{% block contenido %}
+<article class="blog-post">
+    <div class="container mt-4" >
+        <div class="row row-cols-1 row-cols-md-3 g-4" >
+            <div class="col-md-4 text-center">
+                <div class="card" style="margin-top: 30%; height: 100%; width: 1280px; ">{% if posts.imagen %}<img src="{{ posts.imagen.url }}" class="d-block w-100">
+               {% else %}<img src="noticia/default.png"  >
+               {% endif %}</p>  
+                <div class="card-body" style="height: 50%; text-align: center;">      
+                <h5 class="fs-5 fw-bold text-center">{{posts.titulo}}</h5>
+                <h3 style="text-align: center;" style="display:contents;">{{posts.subtitulo}}</h3>
+        
+                <div class="row" >
+                    <div class="col-md-12">
+                        <strong class="fw-lighter text-decoration-underline" style="display:contents;">{{posts.categoria}}</strong>
+                    </div>
+                    <div class="col">
+                        <p class="fw-lighter text-end" style="display:contents;"></p>{{posts.fecha}}</p>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-md-6">
+                        <p class="fst-italic text-break">{{posts.texto}}</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    Comentarios: {{comentarios.count}}
+                    {% include 'comentario/listarcomentario.html' %}
+                <div class="mb-3" style="height: 100%;">
+                    {% include 'comentario/addcomentario.html' %}
+                </div>
+                </div>
+                </div>
+                <style>
+                    body{
+                        font-family:'Times New Roman';
+                    }
+                </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
 {%endblock %}

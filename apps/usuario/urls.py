@@ -9,6 +9,6 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name="usuario/login.html"),name="login"),
     path('logout/', LogoutView.as_view(),name="logout"),
     path('addUsuario/', views.RegistrarUsuario.as_view(),name="addUsuario"),
-    path('modificarUsuario/<int:pk>', views.ModificarUsuario.as_view() ,name="modificarUsuario"),
+    path('modificarUsuario/<int:id>', views.ModificarUsuario.as_view() ,name="modificarUsuario"),
     path('eliminarUsuario/<int:pk>', views.DeleteUsuario.as_view() ,name="eliminarUsuario")
 ]

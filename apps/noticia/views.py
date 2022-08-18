@@ -78,16 +78,16 @@ def ReadPost(request, id):
 	form = ComentarioForm(request.POST or None)
 	if form.is_valid():
 		if request.user.is_authenticated:
-			aux =  form.save(commit=False)
+			aux         =  form.save(commit=False)
 			aux.noticia = posts
-			aux.user = request.user
+			aux.user    = request.user
 			aux.save()
-			form = ComentarioForm()
+			form        = ComentarioForm()
 		else:
 			return redirect('usuario:login')
 	
 	context = {
-		'titulo': 'post',
+		'titulo': 'noticia',
 		'posts': posts,
 		'form': form,
 		'comentarios': comentarios,

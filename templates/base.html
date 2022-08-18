@@ -34,13 +34,13 @@
          ============================-->
     {% block navbar %}
     
-    <nav class="navbar fixed-top" id="fixed-top" style="margin-top: -1.5%;text-align: center ;background-color: #25d366;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px; text-align: center ;background-color: #25d366;" >
+    <nav class="navbar fixed-top" id="fixed-top" style="margin-top: -1.5%;text-align: center ;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px; text-align: center ;" >
         <a class="navbar-brand" href="#">
-            <img id="logo" style="height: 120px; width: 120px; margin-left: 1%; margin-top: 35%; " src="static/img/Logo-modified.png" >
+            <img id="logo" style="height: 120px; width: 120px; margin-left: 1%; margin-top: 35%; " src="{% static 'img/Logo-modified.png' %}" >
         </a>
-        <div class="container-fluid" style="width: fit-content; height: 30px; color: #25d366;">
-            <div class="collapse navbar-collapse" style="text-align: center ; margin-top: 0% auto; color: #25d366;" id="navbarSupportedContentt">
+        <div class="container-fluid" style="width: fit-content; height: 30px; ">
+            <div class="collapse navbar-collapse" style="text-align: center ; margin-top: 0% auto;" id="navbarSupportedContentt">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
                     
                     <!--==========================
@@ -54,7 +54,7 @@
                         <li><a  class="dropdown-item" style="font-size: x-large ;" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
                         <li><a  class="dropdown-item" style="font-size: x-large ;" href="">Recursos descargables</a></li>
                         <li><a  class="dropdown-item" style="font-size: x-large ;" href="">Fotos</a></li> 
-                        
+                        <li><a  class="dropdown-item" style="font-size: x-large ;" href="">Modificar usuario</a></li> 
                         {% if user.is_authenticated %}<li><a class="dropdown-item" style="font-size: x-large ;" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
                     </ul>
                         {% if user.is_superuser %}
@@ -106,7 +106,7 @@
           index.html
   ============================-->
 {% endblock %}
-<a href="" class="whatsapp" style="font-size: x-large ;"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+<a href="https://wa.me/543734403707" class="whatsapp" style="font-size: x-large ;"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 <style>
     .whatsapp {
 position:fixed;

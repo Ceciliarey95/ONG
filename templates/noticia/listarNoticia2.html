@@ -5,18 +5,18 @@
 <!--==========================
           Navbar
 ============================-->
-<nav class="navbar fixed-top" id="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-        <div class="container-fluid" >
-            <!-- <a class="navbar-brand" href="{% url 'index' %}">17 OBJ</a> -->
+<nav class="navbar fixed-top" id="fixed-top" style="margin-top: -1.5%;text-align: center ;font-family: 'Dancing Script', cursive;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px; text-align: center ;">
+        <a class="navbar-brand" href="#">
+            <img id="logo" style="height: 120px; width: 120px; margin-left: 1%; margin-top: 35%; " src="{% static 'img/Logo-modified.png' %}" >
+        </a>
+        <div class="container-fluid" style="width: fit-content; height: 30px; ">
             <div class="collapse navbar-collapse" id="navbarSupportedContentt">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-<li class="nav-item dropdown" style="margin-left: 50%; max-height: 15px;">
-    <li class="nav-item">
-        <a href="{% url 'index' %}" class="nav-link" style="margin-left: 10px;">Inicio</a>
-    </li class="nav-item"> 
-    {% if user.is_superuser %}
+                        <a href="{% url 'index' %}" class="nav-link" style="margin-left: 10px;">Inicio</a>
+                    </li class="nav-item"> 
+                    {% if user.is_superuser %}
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Agregar noticias</a></li>
@@ -25,56 +25,69 @@
                             <li><a target="_blank" class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Administrar categorias</a></li>
                         </ul>
                     {% endif %}
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Categorías
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <ul>
-                {%for i in categoria %}
-                <li><a class="dropdown-item" href="{% url 'apps.noticia:listarPorCategoria' i.nombre %}">{{i.nombre}}</a></li>
-                {% endfor %}
-            </ul>
-    </ul> 
-    <li class="nav-item">
-        <form class="d-flex justify-content-center ms-3" action="/" method="GET">
-            <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
-                stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Buscar noticias</title><circle cx="10.5" 
-                cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-            </button>
-        </form>
-</li class="nav-item"> 
-</li>
-</ul>
-</div>
-</div>
-</nav>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul>
+                                {%for i in categoria %}
+                                <li><a class="dropdown-item" href="{% url 'apps.noticia:listarPorCategoria' i.nombre %}">{{i.nombre}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </ul> 
+                        <li class="nav-item">
+                            <form class="d-flex justify-content-center ms-3" action="/" method="GET">
+                                <input class="form-control me-3" type="date" name="fecha" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-secondary" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" 
+                                    stroke-linejoin="round" stroke-width="2" role="img" viewBox="0 0 24 24"><title>Buscar noticias</title><circle cx="10.5" 
+                                    cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+                                </button>
+                            </form>
+                        </li class="nav-item"> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </nav>
 {%endblock%}
 {% block contenido %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
- <div class="container">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Noticias</strong></h4>
 
 {% if noticia %}	
-
+<div class="container mt-4" >
+    <div class="row row-cols-1 row-cols-md-3 g-4" >
     {% for p in noticia %}
-                
-    <div class="container" style="margin-top: 8%; ">
-        <h1 href="" style="text-align: center;">{{p.titulo}}</h1>
-        <h3 style="text-align: center;">{{p.subtitulo}}</h3>
-        <p style="text-align: center;">{{p.fecha}}</p>
-
-        <p style="margin-left: 30%;">{% if p.imagen %}<img src="{{ p.imagen.url }}"  width="550" height="400">
-           {% else %}<img src="noticia/default.png"  width="550" height="400">
-           {% endif %}</p>
+    <div class="col">
+                <div class="card" style="margin-top: 30%; height: 80%;">{% if p.imagen %}<img src="{{ p.imagen.url }}" style="height: 450px;">
+               {% else %}<img src="noticia/default.png"  >
+               {% endif %}</p>  
+        <div class="card-body" style="height: 50%;">      
+            <h5 class="fs-5 fw-bold text-center">{{p.titulo}}</h5>
+            <h3 style="text-align: center;" style="display:contents;">{{p.subtitulo}}</h3>
+       
+        <div class="row" >
+            <div class="col">
+                <strong class="fw-lighter text-decoration-underline" style="display:contents;">{{p.categoria}}</strong>
+            </div>
+            <div class="col">
+                <p class="fw-lighter text-end" style="display:contents;"></p>{{p.fecha}}</p>
+            </div>
+        </div>
        <a href="{% url 'apps.noticia:readpost' p.id %}" class="btn btn-primary" style="margin-left: 30%;">Leer Más</a>
+    </div>
+</div>
+</div>
+<style>
+    body{
+        font-family:'Times New Roman';
+    }
+</style>
     {% endfor %}
+</div>
+</div>
 {% endif %}
-</div>
-</div>
-</div>
+
 {% endblock %}
