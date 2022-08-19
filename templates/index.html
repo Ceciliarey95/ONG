@@ -5,6 +5,14 @@
     <div class="container-fluid" style="margin-top: auto;">
       <main id="main">
       <section id="intro"  class="">
+        <div class="gdlr-parallax-wrapper gdlr-background-image gdlr-show-all no-skin" id="gdlr-parallax-wrapper-1" data-bgspeed="0" style="background-image: url('https://www.eapn.es/ARCHIVO/fotografias/noticias/1613128847_1608031823_volunteer-2055010_1280.png');padding-top: 150px;padding-bottom: 100px;">
+          <div class="container">
+            <div class="gdlr-item gdlr-content-item" style="margin-bottom: 60px;">
+              <h3 style="color: dark gray;">Bienvenido a nuestro blog {% if user.is_authenticated %} {{user.username}} {% else %}{% endif %}! Somos <strong>la asociación civil: Oportunidad de cambio</strong> un grupo de personas dedicadas a ayudar. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más. Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</p> </h3>
+        </div>
+        <div class="clear">
+        </div>
+      </div></div>
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner" >
                 <div class="carousel-item active">
@@ -25,8 +33,7 @@
             </div>
       </section><!-- #intro -->
       </div>
-    <p style="color: #1e2a45 ; background-color: #a0e0cda2 ;"  class="bienvenida">Bienvenido a nuestro blog {% if user.is_authenticated %} {{user.username}} {% else %}{% endif %}! Somos la asociación civil: Oportunidad de cambio, un grupo de personas dedicadas a ayudar. En este blog, van a encontrar fotos de nuestras actividades, noticias, recursos descargables y mucho más. Registrate y acompañanos en este camino de ayudar a los que más lo necesitan!</p>
-    <p style="color: #cfd5e3  ; background-color: #1e45348a; font-size: large; " class="presentacion_logo">El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referencia a este logro tan importante para nuestra comunidad: </p>
+    <p style="color: #4B4B4B  ; background-color: #efa94a ; font-size: large; " class="presentacion_logo">El 14 de junio de este año cumplimos 10 años y queremos presentarles el logo que hace referencia a este logro tan importante para nuestra comunidad: </p>
   
     <!--==========================
          Slider Logos Section
@@ -93,8 +100,8 @@
               <h2 class="title-about">Visión:</h2>
               <div class="about-content">
                
-                <p style="color: #cfd5e3  ;">
-                    Actualmente la ONG trabaja en tres instalaciones propias, en diferentes puntos de la localidad, a los que asisten mayoritariamente niños de barriadas carenciadas; En este contexto los comedores se convierten en un espacio de contención en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos.
+                <p style="color: #4B4B4B  ;" />
+                "Actualmente la ONG trabaja en tres instalaciones propias, en diferentes puntos de la localidad, a los que asisten mayoritariamente niños de barriadas carenciadas; En este contexto los comedores se convierten en un espacio de contención en el que, además de proporcionarles alimento, se les brinda esparcimiento, apoyo escolar, actividades culturales y recreativas; afecto y atención. Allí los niños son escuchados y contenidos."
                 </p>
             <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
               </div>
@@ -138,9 +145,9 @@
               </div>
             <h2 class="title-about">Misión:</h2>
               <div class="about-content">
-                    <p class="mision" style="color: #cfd5e3  ;" >-	Fomentar el desarrollo de la educación , de la salud y del bienestar social. Logrando el mejoramiento de la calidad de vida.</p>
-                    <p class="mision" style="color: #cfd5e3 ;">-	Estimular la participación civica y solidaria. Crear ámbitos de integración y recreación.</p>
-                    <p class="mision" style="color: #cfd5e3  ;">-	Promover la dignidad humana en toda su dimensión ética y cultural, particularmente la igualdad efectiva de oportunidades entre el hombre y la mujer y los derechos de la infancia.</p>
+                    <p class="mision" style="color: #4B4B4B  ;" >-	Fomentar el desarrollo de la educación , de la salud y del bienestar social. Logrando el mejoramiento de la calidad de vida.</p>
+                    <p class="mision" style="color: #4B4B4B ;">-	Estimular la participación civica y solidaria. Crear ámbitos de integración y recreación.</p>
+                    <p class="mision" style="color: #4B4B4B  ;">-	Promover la dignidad humana en toda su dimensión ética y cultural, particularmente la igualdad efectiva de oportunidades entre el hombre y la mujer y los derechos de la infancia.</p>
                 </p>
                     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
               </div>
@@ -155,15 +162,15 @@
             <h2 class="title-about">Contacto:</h2>
             </div>
               <div class="about-content">
-                <p style="color:  #cfd5e3 ;">
-                    <p class="mision" style="color:  #cfd5e3  ;" >° Machagai-Chaco</p>
-                    <p class="mision" style="color:  #cfd5e3 ;">-	Matricula 3171</p>
-                    <p class="mision" style="color:  #cfd5e3 ;">-	La asociación fue creada el 14 de Junio de 2012</p>
-                    <p class="mision" style="color:  #cfd5e3  ;">-	E-mail: oportunidaddecambiomachagai@gmail.com</p>
-                    <p class="mision" style="color:  #cfd5e3 ;">-	Celular: 3734403707</p>
-                    <p class="mision" style="color:  #cfd5e3 ;">-	Facebook.com/oportunidaddecambio/</p>
-                    <p class="mision" style="color:  #cfd5e3 ;">-	Dirección: Las heras 345 - Machagai</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.4650484862577!2d-60.05455814370389!3d-26.915898070549012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9446ba94ac7896cd%3A0x61f20224831a6fe0!2sLas%20Heras%20345%2C%20Machagai%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1660479432952!5m2!1ses-419!2sar" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p style="color:  #4B4B4B ;">
+                    <p class="mision" style="color:  #4B4B4B  ;" >- Machagai-Chaco</p>
+                    <p class="mision" style="color:  #4B4B4B ;">-	Matricula 3171</p>
+                    <p class="mision" style="color:  #4B4B4B ;">-	La asociación fue creada el 14 de Junio de 2012</p>
+                    <p class="mision" style="color:  #4B4B4B ;">-	E-mail: oportunidaddecambiomachagai@gmail.com</p>
+                    <p class="mision" style="color:  #4B4B4B ;">-	Celular: 3734403707</p>
+                    <p class="mision" style="color:  #4B4B4B ;">-	Facebook.com/oportunidaddecambio/</p>
+                    <p class="mision" style="color:  #4B4B4B ;">-	Dirección: Las heras 345 - Machagai</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.4650484862577!2d-60.05455814370389!3d-26.915898070549012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9446ba94ac7896cd%3A0x61f20224831a6fe0!2sLas%20Heras%20345%2C%20Machagai%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1660479432952!5m2!1ses-419!2sar" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </p>
                     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
               </div>

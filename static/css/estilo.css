@@ -1,8 +1,8 @@
 @import url('CANDARAI.TTF');
 body {
     height: calc(100% - 10px);
-    background-image: linear-gradient(-225deg, #b0efdc 0%, #8f8fd1 100%);
-    background-image: linear-gradient(to top, #89bf9d 0%, #52539b 100%);
+    background-image: linear-gradient(-225deg, hwb(0 100% 0%) 0%, #ffffff 100%);
+    background-image: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
@@ -18,7 +18,7 @@ body {
     z-index: 0;
     }
 .fixed-top{
-    font-size: x-large;
+    font-size: large;
     padding: auto;
     margin-bottom: auto;
     width: auto ;
@@ -33,7 +33,7 @@ body {
     box-shadow: 0 9px 50px hsla(104, 41%, 77%, 0.44);
     padding: 2%;
     font-size: x-large;
-    text-align: center;
+    text-align: justify;
     background-color: rgba(193, 208, 221, 0.541);
 }
 .presentacion_logo{
@@ -71,11 +71,11 @@ h4 {
     height: auto;
     border-radius: 5px;
     margin: 2% auto;
-    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    box-shadow: 0 9px 50px hsla(0, 0%, 98%, 0.31);
     padding: 2%;
     font-size: large;
-    text-align: center;
-    background-color: rgba(41, 45, 68, 0.712);
+    text-align: justify;
+    background-color: rgba(169, 200, 230, 0.902);
 }
 
 .mision{
