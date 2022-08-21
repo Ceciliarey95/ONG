@@ -1,160 +1,195 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
+    <!-- Site made with Mobirise Website Builder v5.6.11, https://mobirise.com -->
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="{% static 'img/Logo-favicon.png' %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Oportunidad de cambio - Blog
-    </title>
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
-    <script src="{% static 'js/date.js' %}"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-    <!-- Bootstrap CSS File -->
-    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <!-- Libraries CSS Files -->
-    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
-    <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
-    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <meta name="generator" content="Mobirise v5.6.11, mobirise.com">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:src" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:title" content="Oportunidad de cambio - Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{% static 'assets/images/logo-modified-169x169.png' %}" type="image/x-icon">
+    <meta name="description" content="">
+
+
+    <title>Oportunidad de cambio - Blog</title>
+    <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons2/mobirise2.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/parallax/jarallax.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/animatecss/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/socicon/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="{% static 'assets/mobirise/css/mbr-additional.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
+
+
 </head>
+{% block navbar %}
 <body>
-    <header>
-         <!--==========================
-                  Navbar Section
-         ============================-->
-    {% block navbar %}
-    
-    <nav class="navbar fixed-top" id="fixed-top" style="margin-top: -1.5%;text-align: center ;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 100px; text-align: center ;" >
-        <a class="navbar-brand" href="#">
-            <img id="logo" style="height: 120px; width: 120px; margin-left: 1%; margin-top: 35%; " src="{% static 'img/Logo-modified.png' %}" >
-        </a>
-        <div class="container-fluid" style="width: fit-content; height: 30px; ">
-            <div class="collapse navbar-collapse" style="text-align: center ; margin-top: 0% auto;" id="navbarSupportedContentt">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
-                    
-                    <!--==========================
-                             Menú
-                    ============================-->
-                 <div class="dropdown">
-                    <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" style="font-size: x-large ;" data-bs-toggle="dropdown" aria-expanded="false">
-                    Menú
-                    </button>
-                    <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
-                        <li><a  class="dropdown-item" style="font-size: x-large ;" href="{% url 'apps.noticia:listarNoticia2' %}">Noticias</a></li> 
-                        <li><a  class="dropdown-item" style="font-size: x-large ;" href="">Recursos descargables</a></li>
-                        <li><a  class="dropdown-item" style="font-size: x-large ;" href="">Fotos</a></li> 
-                        <li><a  class="dropdown-item" style="font-size: x-large ;" href="">Modificar usuario</a></li> 
-                        {% if user.is_authenticated %}<li><a class="dropdown-item" style="font-size: x-large ;" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>{%endif%}
+
+    <section data-bs-version="5.1" class="menu cid-s48OLK6784" once="menu" id="menu1-h">
+
+        <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="https://mobiri.se">
+                            <img src="{% static 'assets/images/logo-modified-169x169.png' %}" alt="Mobirise Website Builder"
+                                style="height: 6.4rem;">
+                        </a>
+                    </span>
+
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                    data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'index' %}">Inicio</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'apps.noticia:listarNoticia2' %}">Blog</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link link text-white display-4"
+                                href="{% url 'nosotros' %}">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link link text-white text-primary display-4"
+                                href="{% url 'fotos' %}">Fotos</a></li>
                     </ul>
-                        {% if user.is_superuser %}
-                    <button class="btn btn-outline-secondary dropdown-toggle" style="font-size: x-large ;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
-                        <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
-                            <button class="btn btn-outline-secondary dropdown-toggle" style="font-size: x-large ;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar noticias</button>
-                            <ul >
-                                <li><a style="font-size: x-large ;" class="dropdown-item" style="font-size: x-large ;" href="{% url 'apps.noticia:addNoticia' %}">Agregar Noticia</a></li>
-                            </ul>
-                            <li><a style="font-size: x-large ;" class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}"> Administrar comentarios</a></li>
-                            <li><a style="font-size: x-large ;" class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Administrar categorias</a></li>
+                    {% if user.is_authenticated %}
+                    <div class="navbar-buttons mbr-section-btn"><a class="btn btn-white display-4"
+                        href="{% url 'apps.usuario:logout' %}"><span
+                            class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
+                        Cerrar sesión</a>
+                    </div>
+                    {%else%}
+                    <div class="navbar-buttons mbr-section-btn"><a class="btn btn-white display-4"
+                            href="{% url 'apps.usuario:login' %}"><span
+                                class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
+                            Iniciar sesión</a> <a class="btn btn-white display-4" href="{% url 'apps.usuario:addUsuario' %}"><span
+                                class="mobi-mbri mobi-mbri-globe-2 mbr-iconfont mbr-iconfont-btn"></span>Registrarse</a>
+                    </div>{% endif %}
+                    {% if user.is_superuser %}
+                    <button class="btn btn-outline-secondary dropdown-toggle"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
+                        <ul>
+                            <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addNoticia' %}">Agregar Noticia</a></li>
+                            <li><a  class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Agregar categorias</a></li>
                         </ul>
                     {% endif %}
                 </div>
-                <li class="nav-item">
-                    <a href="{% url 'index'%}" class="nav-link" > Inicio </a>
-                </li>
-                    <li class="nav-item">
-                        <a href="#about-us" class="nav-link" > Visión</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a href="#do" class="nav-link" > Misión </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link" > Contacto </a>
-                    </li>
-                        {% if user.is_authenticated %}{%else%}
-                        <a class="nav-link" href="{% url 'apps.usuario:addUsuario' %}">Registrarse</a>
-                        <a class="nav-link" href="{% url 'apps.usuario:login' %}">Iniciar sesión</a> 
-                        {% endif %}
-                    <li class="nav-item">
-                        <li class="ms-3"><a class="text-muted" style="font-size: x-large ;" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="40" height="40"><use xlink:href="#instagram"></use></svg></a></li>
-                    </li>
-                    <li class="nav-item">
-                       <li class="ms-3"><a class="text-muted" style="font-size: x-large ;" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="40" height="40"><use xlink:href="#facebook"></use></svg></a></li>
-                    </li> 
-                    <div id='logo'></div><!-- li con id Logo relacionado al css -->
             </div>
-        </div>
-    </nav>
-</nav>
+        </nav>
 
+    </section>
 {% endblock %}
-</header>
 
 {% block contenido %}
  <!--==========================
           index.html
   ============================-->
 {% endblock %}
-<a href="https://wa.me/543734403707" class="whatsapp" style="font-size: x-large ;"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+<a href="https://wa.me/543734403707" class="whatsapp" > <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 <style>
-    .whatsapp {
-position:fixed;
-width:60px;
-height:60px;
-bottom:40px;
-right:40px;
-background-color:#25d366;
-color:#FFF;
-border-radius:50px;
-text-align:center;
-font-size:30px;
-z-index:100;
+.whatsapp {
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        z-index:100;
 }
 
 .whatsapp-icon {
-margin-top:13px;
+        margin-top:13px;
 }
   </style>
    <!--==========================
          Footer Section
   ============================-->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="bootstrap" viewBox="0 0 118 94">
-          <title>Bootstrap</title>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
-        </symbol>
-        <symbol id="facebook" viewBox="0 0 16 16">
-          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
-        </symbol>
-        <symbol id="instagram" viewBox="0 0 16 16">
-            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-        </symbol>
-    </svg>
-    <div class="container-fluid">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center ">
-                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-                </a>
-                <span class="text-decoration-none">© 2022 Oportunidad de cambio, Inc</span>
-            </div>
-          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-muted" style="font-size: x-large ;" href="https://www.instagram.com/oportunidaddecambiomachagai/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-muted" style="font-size: x-large ;" href="https://www.facebook.com/oportunidadecambio"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-          </ul>
-        </footer>
-      </div>     
+  <section data-bs-version="5.1" class="footer3 cid-s48P1Icc8J mbr-reveal" once="footers" id="footer3-i">
 
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+
+            <div class="row social-row">
+                <div class="social-list align-right pb-2">
+
+
+
+
+
+
+                    <div class="soc-item">
+                        <a href="https://twitter.com/mobirise" target="_blank">
+                            <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                            <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-4">© 2022 Oportunidad de
+                    cambio, Inc<br>Blog creado por Grupo 7 - Comisión 3 - Informatorio Chaco</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <a href="https://mobiri"></a>
+    <a href="https://mobiri"></a>
+</section>
+<script src="{% static 'assets/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/parallax/jarallax.js' %}"></script>
+<script src="{% static 'assets/smoothscroll/smooth-scroll.js' %}"></script>
+<script src="{% static 'assets/ytplayer/index.js' %}"></script>
+<script src="{% static 'assets/dropdown/js/navbar-dropdown.js' %}"></script>
+<script src="{% static 'assets/theme/js/script.js' %}"></script>
+
+
+<div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i
+            class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+<input name="animation" type="hidden">
 </body>
+
 </html>

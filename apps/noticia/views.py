@@ -12,17 +12,13 @@ class AddNoticia(CreateView):
     model         = Noticia
     fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
     template_name = 'noticia/addNoticia.html'
+    success_url   = reverse_lazy('index')
 
 class AddCategoria(CreateView):
     model         = Categoria
     fields        = ['nombre', 'id']
     template_name = 'noticia/addCategoria.html'
     success_url   = reverse_lazy('index')
-
-class ModificarNoticia(UpdateView):
-    noticia       = Noticia
-    fields        =  ['titulo', 'subtitulo','texto','categoria','imagen']
-    template_name = 'noticia/modificarNoticia.html' 
 
 class DeleteNoticia(DeleteView):
 	model 		  = Noticia
@@ -39,24 +35,15 @@ def ListarNoticia(request):
     }
     return render(request,'noticia/listarNoticia2.html',context)
 
-def botonCategoria(request):
-    categorias = Categoria.objects.filter()
-
 def ListarNoticiaPorCategoria(request,categoria):
     categoria2 = Categoria.objects.filter(nombre=categoria)
     noticia    = Noticia.objects.filter(categoria=categoria2[0].id)
+    categorias  = Categoria.objects.all()
     context    = {
-        'noticia' : noticia
+        'noticia' : noticia,
+        'categoria':categorias
     }
     return render(request,'noticia/listarPorCategoria.html',context)
-
-
-def ListarNoticiaPorFecha(request,fecha):
-    noticia    = Noticia.objects.filter(fecha=fecha)
-    context    = {
-        'noticia' : noticia
-    }
-    return render(request,'noticia/listarPorFecha.html',context)
 
 def noticias(request):
     noticias = Noticia.objects.get(all)
@@ -93,3 +80,4 @@ def ReadPost(request, id):
 		'comentarios': comentarios,
 	}
 	return render(request,'noticia/post.html', context)
+

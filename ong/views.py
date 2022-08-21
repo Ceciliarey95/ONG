@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 
 def Index(request):
-    try:
-        if request.GET['fecha'] is not None:
-            return redirect('noticia/listarFecha/'+request.GET['fecha'])
-    except :
-        return render(request, 'index.html')
+    return render(request, 'index.html')
+
+def fotos(request):
+    return render(request, 'fotos.html')
+
+def nosotros(request):
+    return render(request, 'nosotros.html')
