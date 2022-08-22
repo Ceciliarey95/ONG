@@ -18,7 +18,7 @@ class Noticia(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     imagen    = models.ImageField(upload_to='noticia', default='noticia/default.png')
     published = models.DateTimeField(default=timezone.now)
-    likes     = models.ManyToManyField(Usuario, related_name = 'post_likes')
+    #likes     = models.ManyToManyField(Usuario, related_name = 'post_likes')
     
 
     class Meta:
