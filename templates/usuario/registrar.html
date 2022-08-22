@@ -1,44 +1,44 @@
 {% extends 'base.html' %}
-
 {% block contenido %}
 {% load static %}
 <form method="post">{% csrf_token %}
 
-    <section data-bs-version="5.1" class="form5 cid-tf6NtEVcUd" id="form5-12">
-
-    
-
-    
-
-        <div class="container">
-            <div class="row content-wrapper justify-content-center">
-                <div class="col-lg-3 offset-lg-1 mbr-form" data-form-type="formoid">
-                    <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="ul8Z/NpINJHqC3eGzuJ/n3iJFXGN8NL7XSHfRrwIuud/OeqHJIVCKWaPWomcQfieT4HE1yixFMk7LPgqvRtD4ZdaNWzvMlYTES87QltzEogt6iYLxmstUWaXInGKL6Om">
-                        <div class="row">
-                            <div hidden="hidden" data-form-alert="" class="alert alert-success col-12"></div>
-                            <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-                                Oops...! some problem!
+    <section data-bs-version="5.1" class="form4 cid-tffFqE5vN0 mbr-fullscreen" id="form4-17">
+            <div class="container">
+                <div class="row content-wrapper justify-content-center">
+                    <div class="col-lg-3 offset-lg-1 mbr-form" data-form-type="formoid">
+                        <form action="" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="rngJ7a+jYHa4fFidugyWQA3pT2rkpLtcFlikTEOHzXB3sfdMqsRglkQoLCMlA6HQYB08OZhS8oY6oNHM7AunVasVZ8Ncczu6meNkLSWLRlRxFrArlVnRrq6Vh8pHgl8B">
+                            <div class="row">
+                                <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Gracias!</div>
+                                <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                                    Oops...! some problem!
+                                </div>
                             </div>
+                            <div class="dragArea row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h1 class="mbr-section-title mb-4 display-2">
+                                        <strong>Registro de usuario</strong>
+                                    </h1>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <p class="mbr-text mbr-fonts-style mb-4 display-7">
+                                        Ingrese sus datos:</p>
+                                </div>
+                                <div class="col-lg-12 col-md col-12 form-group mb-3" data-for="name">
+                                    {{form.as_p}}
+                                    <input type="submit" value="Registrarse">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-7 offset-lg-1 col-12">
+                        <div class="image-wrapper">
+                            <img class="w-75" src="{% static 'assets/images/logo-modified-1271x1271.png' %}" alt="">
                         </div>
-                        <div class="dragArea row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Registro</strong></h3>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <p class="mbr-text mbr-fonts-style mb-4 display-7">Ingrese sus datos:</p>
-                            </div>
-                            {{form.as_p}}
-                            <input type="submit" value="Registrarse">
-                        </div>
-                    </form>
-                   
-                </div>
-                <div class="col-lg-7 offset-lg-1 col-12">
-                    <div class="image-wrapper">
-                        <img class="w-75" src="{% static 'assets/images/logo-modified-1271x1271.png' %}" alt="">
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+</form>
+
 {% endblock %}
