@@ -15,5 +15,9 @@ def AddComentario(request):
 	return render(request,'comentario/addcomentario.html', context)
 
 def Comentarios(request):
-	return render(request,'comentario/listarcomentario.html')
+	comentarios = Comentarios.objects.all()
+	context={
+		'comentarios' : comentarios,
+	}
+	return render(request,'comentario/listarcomentario.html', context)
 

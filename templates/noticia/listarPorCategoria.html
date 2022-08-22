@@ -61,10 +61,12 @@
                                 class="mobi-mbri mobi-mbri-globe-2 mbr-iconfont mbr-iconfont-btn"></span>Registrarse</a>
                     </div>{% endif %}
                     {% if user.is_superuser %}
-                    <button class="btn btn-outline-secondary dropdown-toggle"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
-                        <ul>
-                            <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addNoticia' %}">Agregar Noticia</a></li>
-                            <li><a  class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Agregar categorias</a></li>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1"  data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
+                        <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
+                            <li><a  class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}">Agregar noticia</a></li> 
+                            <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addCategoria' %}">Agregar categoria</a></li>
+                            <li><a  class="dropdown-item"  href="">Panel admin</a></li>
                         </ul>
                     {% endif %}
                 </div>
