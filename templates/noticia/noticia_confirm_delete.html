@@ -7,7 +7,7 @@
 <form method="post" >
     {%csrf_token%}
     <h3>Esta seguro que desea eliminar la noticia {{noticia.titulo}} ?</h3>
-    <button class="btn btn-danger" type="submit">Si, eliminar</button>
+    <input class="btn btn-danger" type="submit">Si, eliminar</input>
     <a class="btn btn-default" href="{% url 'apps.noticia:listarNoticia2' %}">Cancelar</a>
 </form>
 {% endblock %}

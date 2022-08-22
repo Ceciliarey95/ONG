@@ -17,6 +17,7 @@
 
 
     <title>Oportunidad de cambio - Blog</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons2/mobirise2.css' %}">
     <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
@@ -98,44 +99,28 @@
                                 class="mobi-mbri mobi-mbri-globe-2 mbr-iconfont mbr-iconfont-btn"></span>Registrarse</a>
                     </div>{% endif %}
                     {% if user.is_superuser %}
-                    <button class="btn btn-outline-secondary dropdown-toggle"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
-                        <ul>
-                            <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addNoticia' %}">Agregar Noticia</a></li>
-                            <li><a  class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}"> Agregar categorias</a></li>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1"  data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
+                        <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
+                            <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addNoticia' %}">Agregar noticia</a></li> 
+                            <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addCategoria' %}">Agregar categoria</a></li>
+                            <li><a  class="dropdown-item"  href="{% url 'admin' %}">Panel admin</a></li>
                         </ul>
                     {% endif %}
                 </div>
             </div>
         </nav>
-
     </section>
 {% endblock %}
+
 
 {% block contenido %}
  <!--==========================
           index.html
   ============================-->
 {% endblock %}
-<a href="https://wa.me/543734403707" class="whatsapp" > <i class="fa fa-whatsapp whatsapp-icon"></i></a>
-<style>
-.whatsapp {
-        position:fixed;
-        width:60px;
-        height:60px;
-        bottom:40px;
-        right:40px;
-        background-color:#25d366;
-        color:#FFF;
-        border-radius:50px;
-        text-align:center;
-        font-size:30px;
-        z-index:100;
-}
+<a href="https://wa.me/543734403707" class="whatsapp" style="font-size: x-large ;"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 
-.whatsapp-icon {
-        margin-top:13px;
-}
-  </style>
    <!--==========================
          Footer Section
   ============================-->

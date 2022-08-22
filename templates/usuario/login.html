@@ -3,12 +3,7 @@
 {% load static %}
 <form method="post">{% csrf_token %}
 
-    <section data-bs-version="5.1" class="form4 cid-tf6M1H8RDD mbr-fullscreen" id="form4-11">
-
-    
-
-    
-
+    <section style="margin-top: 5%;" data-bs-version="5.1" class="form4 cid-tf6M1H8RDD mbr-fullscreen" id="form4-11">
         <div class="container">
             <div class="row content-wrapper justify-content-center">
                 <div class="col-lg-3 offset-lg-1 mbr-form" data-form-type="formoid">
@@ -30,17 +25,15 @@
                             <input type="submit" value="Iniciar sesión">
                         </div>
                     </form>
-                    <div class="other">
-                        <button class="btn submits sign-up" href="{% url 'apps.usuario:addUsuario' %}">Registrarse<i class="fa fa-user-plus" aria-hidden="true"></i>
-                        </button>
-                    </div>
                 </div>
                 <div class="col-lg-7 offset-lg-1 col-12">
                     <div class="image-wrapper">
-                        <img class="w-100" src="{% static 'assets/images/logo-modified-1271x1271.png' %}" alt="">
+                        <img class="w-75" src="{% static 'assets/images/logo-modified-1271x1271.png' %}" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+</form>
+
 {% endblock %}

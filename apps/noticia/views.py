@@ -20,10 +20,17 @@ class AddCategoria(CreateView):
     template_name = 'noticia/addCategoria.html'
     success_url   = reverse_lazy('index')
 
+class UpdateNoticia(UpdateView):
+    model         = Noticia
+    fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
+    template_name = 'noticia/addNoticia.html'
+    success_url   = reverse_lazy('index')
+
 class DeleteNoticia(DeleteView):
 	model 		  = Noticia
 	template_name = 'noticia/noticia_confirm_delete.html'
 	success_url   = reverse_lazy('index')
+
 
 def ListarNoticia(request):
     noticia    = Noticia.objects.all()
@@ -60,6 +67,7 @@ def ReadPost(request, id):
 		posts   = ExistePost(id)
 	except Exception:
 		posts   = Noticia.objects.get(id=id)
+        
 	comentarios = Comentarios.objects.filter(noticia=id)
     
 	form = ComentarioForm(request.POST or None)

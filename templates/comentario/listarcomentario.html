@@ -3,11 +3,11 @@
     <div class="row justify-content-md-center ">
       <div class="col-md-6">
         <div class="list-group-item d-flex gap-3 py-3" aria-current="true">
-          <img src="{{ item.usuario.imagen.url }}" class="d-block w-25" alt="twbs" width="40" height="40" class="rounded-circle flex-shrink-0">
+          <img src="{{ item.usuario.imagen.url }}" style="width:10%; height: 10%;" alt="twbs" width="40" height="40" class="rounded-circle flex-shrink-0">
           <div class="d-flex gap-2 w-100 justify-content-between">
             <div>
               <h6 class="mb-0">{{ item.usuario.username }}</h6>
-              <p class="mb-0 text-break opacity-75">{{ item.texto }}</p>
+              <p class="mb-0 text-break opacity-75" >{{ item.texto }}</p>
             </div>
             <small class="opacity-50 text-nowrap">{{ item.fecha }}</small>
           </div>

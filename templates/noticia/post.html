@@ -2,13 +2,15 @@
 {% block title %}{{titulo}}{%endblock %}
 {% load static %}
 {% block contenido %}
-
+{% if user.is_superuser %}
+<div class="dropdown" style="margin-top: 10%;">
+    <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1"  data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
+    <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
+        <li><a  class="dropdown-item"  href="{% url 'apps.noticia:modificarNoticia' posts.pk %}">Modificar noticia</a></li>
+        <li><a  class="dropdown-item"  href="{% url 'apps.noticia:eliminarNoticia' posts.pk %}">Eliminar noticia</a></li>
+    </ul>
+{% endif %}
 <section data-bs-version="5.1" class="image1 cid-tf6nPGwDQN" id="image1-q">
-    
-
-    
-    
-
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg-6">
@@ -21,8 +23,8 @@
             </div>
             <div class="col-12 col-lg">
                 <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>{{posts.titulo}}</strong></h3>
-                    <h2 class="mbr-section-title mbr-fonts-style mb-3 display-6">{{posts.subtitulo}}</h2>
+                    <h2 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>{{posts.titulo}}</strong></h2>
+                    <h4 class="mbr-section-title mbr-fonts-style mb-3 "><i>{{posts.subtitulo}}</i></h4>
                     <p class="mbr-text mbr-fonts-style display-7">{{posts.texto}}</p>
                 </div>
                 
@@ -30,12 +32,13 @@
             
         </div>
     </div>
-    <div class="comment">
+    <div class="mb-3 display-7" style="text-align: center">
         Comentarios: {{comentarios.count}}
         {% include 'comentario/listarcomentario.html' %}
-    <div class="mb-3" style="height: 100%;">
-        {% include 'comentario/addcomentario.html' %}
     </div>
+    <div class="mb-3 display-7" >
+        {% include 'comentario/addcomentario.html' %}
+    
     </div>
 </section>
 

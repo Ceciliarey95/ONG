@@ -16,3 +16,4 @@ def AddComentario(request):
 
 def Comentarios(request):
 	return render(request,'comentario/listarcomentario.html')
+

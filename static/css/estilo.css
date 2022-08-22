@@ -256,3 +256,20 @@ header {
         z-index: 0;
       }
   
+.whatsapp {
+        position:fixed;
+        width:55px;
+        height:55px;
+        bottom:62px;
+        right:15px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:60px;
+        text-align:center;
+        font-size:30px;
+        z-index:100;
+    }
+
+    .whatsapp-icon {
+        margin-top:15px;
+    }

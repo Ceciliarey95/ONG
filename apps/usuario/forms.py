@@ -2,14 +2,13 @@
 from .models import Usuario
 from django.db import transaction
 from django.contrib.auth.forms import UserCreationForm
-from django import forms
 
 
 class RegistroUsuarioForm(UserCreationForm):
 
     class Meta:
         model  = Usuario
-        fields = ['username','password1','password2','first_name','last_name','email', 'imagen']
+        fields = ['first_name','last_name','username','password1','password2','email', 'imagen']
 
     @transaction.atomic
     def save(self):
