@@ -13,6 +13,7 @@ urlpatterns = [
     path('noticia/', include('apps.noticia.urls')),
     path('usuario/', include('apps.usuario.urls')),
     path('comentario/', include('apps.comentario.urls')),
+    path('like/<int:pk>', views.darLike, name='dar_like'),
     path('fotos/', fotos, name='fotos'),
     path('nosotros/', nosotros, name='nosotros'),
     path('reset/password_reset', PasswordResetView.as_view(), {'template_name':'password/password_reset_form.html', 'email_template_name': 'password/password_reset_email.html'}, name='password_reset'),
