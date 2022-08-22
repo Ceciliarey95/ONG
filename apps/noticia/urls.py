@@ -11,4 +11,5 @@ urlpatterns = [
     path('readpost/<int:id>', views.ReadPost, name="readpost"),
     path('eliminarNoticia/<pk>', views.DeleteNoticia.as_view(),name="eliminarNoticia"),
     path('modificarNoticia/<pk>', views.UpdateNoticia.as_view(), name="modificarNoticia"), 
+    #path('like/<pk>', views.darLike, name='dar_like'),
 ]

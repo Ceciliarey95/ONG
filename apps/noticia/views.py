@@ -1,6 +1,6 @@
 from multiprocessing import context
 from sre_constants import CATEGORY_UNI_LINEBREAK
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Noticia, Categoria 
@@ -67,7 +67,7 @@ def ReadPost(request, id):
 		posts   = ExistePost(id)
 	except Exception:
 		posts   = Noticia.objects.get(id=id)
-        
+           
 	comentarios = Comentarios.objects.filter(noticia=id)
     
 	form = ComentarioForm(request.POST or None)
@@ -80,7 +80,7 @@ def ReadPost(request, id):
 			form        = ComentarioForm()
 		else:
 			return redirect('usuario:login')
-	
+
 	context = {
 		'titulo': 'noticia',
 		'posts': posts,
@@ -89,3 +89,11 @@ def ReadPost(request, id):
 	}
 	return render(request,'noticia/post.html', context)
 
+"""def darLike(request, pk):
+    noticia = get_object_or_404(Noticia, id=pk)
+    if request.user in noticia.likes.all():
+        noticia.likes.remove(request.user)
+    else:
+        noticia.likes.add(request.user.id)
+    return redirect('/noticia/'+str(noticia.id))
+"""
