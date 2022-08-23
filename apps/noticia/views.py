@@ -93,11 +93,4 @@ def ReadPost(request, id):
 	}
 	return render(request,'noticia/post.html', context)
 
-"""def darLike(request, pk):
-    noticia = get_object_or_404(Noticia, id=pk)
-    if request.user in noticia.likes.all():
-        noticia.likes.remove(request.user)
-    else:
-        noticia.likes.add(request.user.id)
-    return redirect('/noticia/'+str(noticia.id))
-"""
+

@@ -18,8 +18,7 @@ class Noticia(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     imagen    = models.ImageField(null=True, blank=True,upload_to='noticia', default='noticia/default.png')
     published = models.DateTimeField(default=timezone.now)
-    #likes     = models.ManyToManyField(Usuario, related_name = 'post_likes')
-    
+
 
     class Meta:
         ordering = ('-published',)
@@ -28,9 +27,3 @@ class Noticia(models.Model):
         return self.titulo
 
     
-    #like = models.ManyToManyField(Usuario, blank=True,related_name='likes')
-    #dislike = models.ManyToManyField(Usuario, blank=True,related_name='dislikes')
-
-#__________Creado desde 0 en youtube__________#
-
-
