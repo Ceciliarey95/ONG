@@ -1,4 +1,3 @@
-from tkinter import Y
 from django.db import models
 from apps.noticia.models import Noticia
 from apps.usuario.models import Usuario
