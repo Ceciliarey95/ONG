@@ -82,12 +82,12 @@
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'nosotros' %}">Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'contacto' %}">Contacto</a></li>
                     </ul>
-                    {% if user.is_authenticated %}
+                    {% if user.is_authenticated %}{% if user.is_superuser %}{%else%}
                     <div class="navbar-buttons mbr-section-btn"><a class="btn btn-white display-4"
                         href="{% url 'apps.usuario:logout' %}"><span
                             class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
                         Cerrar sesión</a>
-                    </div>
+                    </div>{% endif %}
                     {%else%}
                     <div class="navbar-buttons mbr-section-btn"><a class="btn btn-white display-4"
                             href="{% url 'apps.usuario:login' %}"><span
@@ -101,7 +101,8 @@
                         <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
                             <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addNoticia' %}">Agregar noticia</a></li> 
                             <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addCategoria' %}">Agregar categoria</a></li>
-                            <li><a  class="dropdown-item"  href="{% url 'admin' %}">Panel admin</a></li>
+                            <li><a  class="dropdown-item"  href="/admin">Panel admin</a></li>
+                            <li><a  class="dropdown-item"  href="{% url 'apps.usuario:logout' %}">Cerrar sesión</a></li>
                         </ul>
                     {% endif %}
                 </div>
