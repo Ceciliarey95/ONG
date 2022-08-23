@@ -60,6 +60,7 @@
                             <img src="{% static 'assets/images/logo-modified-169x169.png' %}" alt="Mobirise Website Builder"
                                 style="height: 6.4rem;">
                         </a>
+                        {% if user.is_authenticated %}<h5 style="color:#fff; margin-top: 25%; margin-left: 5%;">{{user.username}}</h5>{% endif %}
                     </span>
 
                 </div>
@@ -103,16 +104,15 @@
                         <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
                             <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addNoticia' %}">Agregar noticia</a></li> 
                             <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addCategoria' %}">Agregar categoria</a></li>
-                            <li><a  class="dropdown-item"  href="">Panel admin</a></li>
+                            <li><a  class="dropdown-item"  href="{% url 'admin' %}">Panel admin</a></li>
                         </ul>
                     {% endif %}
                 </div>
             </div>
         </nav>
+        
     </section>
 {% endblock %}
-
-
 {% block contenido %}
  <!--==========================
           index.html

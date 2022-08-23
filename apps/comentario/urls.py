@@ -6,6 +6,6 @@ app_name = 'apps.comentario'
 
 urlpatterns = [
     path('addComentario/', views.AddComentario,name="addComentario"),
-    path('comentarios/', views.Comentarios, name="comentarios"),
+    path('comentarios/', views.Comentarioss, name="comentarios"),
     
 ]

@@ -17,6 +17,7 @@
                             <img src="{% static 'assets/images/logo-modified-169x169.png' %}" alt="Mobirise Website Builder"
                                 style="height: 6.4rem;">
                         </a>
+                        {% if user.is_authenticated %}<h5 style="color:#fff; margin-top: 25%; margin-left: 5%;">{{user.username}}</h5>{% endif %}
                     </span>
 
                 </div>
@@ -41,12 +42,13 @@
                         <li class="nav-item"><a class="nav-link link text-white text-primary display-4"
                                 href="{% url 'fotos' %}">Fotos</a></li>
                     </ul>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="btn-group"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
                             {%for i in categoria %}
-                            <li><a class="dropdown-item" style="display: block;" href="{% url 'apps.noticia:listarPorCategoria' i.nombre %}">{{i.nombre}}</a></li>
+                            <li ><a  class="dropdown-item" href="{% url 'apps.noticia:listarPorCategoria' i.nombre %}">{{i.nombre}}</a></li>
                             {% endfor %}
-                        </ul> 
+                        </ul>
+                    </div>
                     {% if user.is_authenticated %}
                     <div class="navbar-buttons mbr-section-btn"><a class="btn btn-white display-4"
                         href="{% url 'apps.usuario:logout' %}"><span

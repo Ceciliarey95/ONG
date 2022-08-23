@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Comentarios
 from .forms import  ComentarioForm
-from apps.noticia.models import Noticia
+from apps.usuario.models import Usuario
 
 
 def AddComentario(request):
@@ -9,12 +9,13 @@ def AddComentario(request):
 	if form.is_valid():
 		form.save()
 		form = ComentarioForm()
+	
 	context={
 		'form': form,
 	}
 	return render(request,'comentario/addcomentario.html', context)
 
-def Comentarios(request):
+def Comentarioss(request):
 	comentarios = Comentarios.objects.all()
 	context={
 		'comentarios' : comentarios,

@@ -7,6 +7,7 @@ BASE_DIR           = Path(__file__).resolve().parent.parent
 
 AUTH_USER_MODEL    ='usuario.Usuario'
 
+LOGIN_URL          = reverse_lazy('apps.usuario:login')
 LOGIN_REDIRECT_URL = reverse_lazy('index')
 LOGOUT_REDIRECT_URL= reverse_lazy('index')
 

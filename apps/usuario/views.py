@@ -16,3 +16,11 @@ class RegistrarUsuario(CreateView):
 	form_class    = RegistroUsuarioForm
 	template_name = 'usuario/registrar.html'
 	success_url   = reverse_lazy('index')
+
+def ListarUsuario(request):
+    usuario    = Usuario.objects.all()
+    
+    context = {
+        'usuario':usuario,
+    }
+    return render(request,'base.html',context)
