@@ -15,7 +15,7 @@ class AddNoticia(LoginRequiredMixin, CreateView):
     model         = Noticia
     fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
     template_name = 'noticia/addNoticia.html'
-    success_url   = reverse_lazy('index')
+    success_url   = reverse_lazy('apps.noticia:listarNoticia2')
 
 
 class AddCategoria(LoginRequiredMixin,CreateView):
@@ -29,13 +29,13 @@ class UpdateNoticia(LoginRequiredMixin,UpdateView):
     model         = Noticia
     fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
     template_name = 'noticia/addNoticia.html'
-    success_url   = reverse_lazy('index')
+    success_url   = reverse_lazy('apps.noticia:listarNoticia2')
 
 
 class DeleteNoticia(LoginRequiredMixin,DeleteView):
 	model 		  = Noticia
 	template_name = 'noticia/noticia_confirm_delete.html'
-	success_url   = reverse_lazy('index')
+	success_url   = reverse_lazy('apps.noticia:listarNoticia2')
 
 
 def ListarNoticia(request):
@@ -80,11 +80,12 @@ def ReadPost(request, id):
 		if request.user.is_authenticated:
 			aux         =  form.save(commit=False)
 			aux.noticia = posts
-			aux.user    = request.user
+			aux.usuario = request.user
 			aux.save()
 			form        = ComentarioForm()
 		else:
 			return redirect('usuario:login')
+            
 	context = {
 		'titulo': 'noticia',
 		'posts': posts,
@@ -92,5 +93,7 @@ def ReadPost(request, id):
 		'comentarios': comentarios,
 	}
 	return render(request,'noticia/post.html', context)
+
+
 
 

@@ -11,3 +11,13 @@ class ComentarioForm(forms.ModelForm):
         model = Comentarios
         fields = ['texto']
         exclude = ['noticia']
+
+"""class ComentarioForm(forms.ModelForm):
+    comentario = forms.CharField(
+        widget=forms.Textarea(attrs={
+            'rows':'2', 
+            'placeholder':'Escribe un comentario...',
+            }), required=True, max_length=250, label='Comentario')
+    class Meta:
+        model = Comentarios
+        fields = ('texto',)"""

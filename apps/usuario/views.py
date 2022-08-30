@@ -1,21 +1,14 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, DeleteView
 from .models import Usuario
 from .forms import RegistroUsuarioForm
-
-""" from django.contrib.auth.forms import UserCreationForm
-class CustomUserCreationForm(UserCreationForm):
-	class Meta(UserCreationForm.Meta):
-		model = Usuario
-		#fields = UserCreationForm.Meta.fields + ('imagen')
-		template_name = 'usuario/registrar.html' """
 
 class RegistrarUsuario(CreateView):
 	model         = Usuario
 	form_class    = RegistroUsuarioForm
 	template_name = 'usuario/registrar.html'
-	success_url   = reverse_lazy('index')
+	success_url   = reverse_lazy('apps.usuario:login')
 
 def ListarUsuario(request):
     usuario    = Usuario.objects.all()
@@ -24,3 +17,15 @@ def ListarUsuario(request):
         'usuario':usuario,
     }
     return render(request,'base.html',context)
+
+def Usuarios(request):
+	usuarios = Usuario.objects.all()
+	context={
+		'usuarios': usuarios,
+	}
+	return render(request,'usuario/listarUsuarios.html', context)
+
+class DeleteUsuario(DeleteView):
+	model 		  = Usuario
+	template_name = 'usuario/usuario_delete.html'
+	success_url   = reverse_lazy('apps.usuario:listarUsuarios')

@@ -1,7 +1,6 @@
 from audioop import reverse
 from django.db import models
 from django.utils import timezone
-from apps.usuario.models import Usuario
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=250, null=False)

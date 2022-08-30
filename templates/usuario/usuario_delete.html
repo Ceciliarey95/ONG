@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block navbar %}
+{% endblock %}
+{% block contenido %}
+{% load static %}
+
+<form method="post" >
+    {%csrf_token%}
+    <h3>Esta seguro que desea eliminar el usuario {{usuario.username}}?</h3>
+    <input class="btn btn-danger" type="submit">Si, eliminar</input>
+    <a class="btn btn-default" href="{% url 'apps.usuario:listarUsuarios' %}">Cancelar</a>
+</form>
+{% endblock %}

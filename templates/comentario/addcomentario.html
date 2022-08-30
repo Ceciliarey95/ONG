@@ -3,7 +3,7 @@
       <div class="list-group-item gap-3 py-3" aria-current="true">
         <form method="POST" enctype="multipart/form-data">{%csrf_token%}
             <div class="mb-3">
-                {{ form.as_p }}
+                {{ form }}
             </div>
             {% if user.is_authenticated %}
                 <input class="btn btn-outline-secondary"type="submit" value="Comentar"/> 
@@ -23,7 +23,7 @@
                             <div class="modal-body">
                                 Usted tiene que iniciar sesión para poder comentar o registrarse
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-body">
                                 <a class="btn btn-outline-secondary" href="{% url 'apps.usuario:login' %}" target="_blank">Iniciar sesión</a>
                                 <a class="btn btn-outline-secondary" href="{% url 'apps.usuario:login' %}" target="_blank">Registrarse</a>
                             </div>
