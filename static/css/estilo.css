@@ -8,3 +8,8 @@ body {
     bottom: 15px;
     right: 15px;
 }
+.item-categoria {
+    position: absolute;
+    bottom: 0%;
+    height: 10px;
+}

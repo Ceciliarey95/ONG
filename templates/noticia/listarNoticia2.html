@@ -82,24 +82,24 @@
         {% for p in noticia %}
         <div class="timelines-container mt-4">
             <div class="row timeline-element first-separline mb-5">
-                <p style='text-align: center;'><strong style="display:contents;">{{p.categoria}}</strong></p>
-                <p style='text-align: center;' class="mbr-timeline-date display-7">{{p.fecha}}</p>
+               
+                <p style='text-align: center;' class="mbr-timeline-date ">{{p.fecha}}</p>
                 <div class="timeline-date col-12">
                     <div class="timeline-date-wrapper">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="image-wrapper">
-                        {% if p.imagen %}<img class="d-block w-50" src="{{ p.imagen.url }}" title="">{% else %}<img src="noticia/default.png" >
+                        {% if p.imagen %}<img style="display: block;" class="d-block w-75" src="{{ p.imagen.url }}" title="">{% else %}<img src="noticia/default.png" >
                         {% endif %}
+                        <p class="btn btn-primary btn-sm item-categoria">{{p.categoria}}</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="timeline-text-wrapper">
-                        <h4 class="mbr-timeline-title mbr-fonts-style mb-0 display-5"><strong>{{p.titulo}}</strong></h4>
-                        <h3 style="text-align: center;" style="display:contents;">{{p.subtitulo}}</h3>
-                        <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
-                            <a href="{% url 'apps.noticia:readpost' p.id %}" class="btn btn-primary" style="margin-left: 30%;">Leer Más</a></p>
+                        <h4  style="text-align: center;" class="mbr-timeline-title mbr-fonts-style mb-0 display-5"><strong>{{p.titulo}}</strong></h4>
+                        <h3 style="text-align: center;" style="display:contents;"><i>{{p.subtitulo}}</i></h3>
+                        <p ><a href="{% url 'apps.noticia:readpost' p.id %}" class="btn btn-primary" style="margin-left: 30%; font-size: small;">Leer Más</a></p>
                     </div>
                 </div>
             </div>
