@@ -106,4 +106,36 @@
         </div>{% endfor %}
     </div>
 </section>{% endif %}
+<style>
+    button {
+        display: inline-block;
+        color: #252537;
+        outline: none;
+        border: none;
+        text-align: center;
+        transition: all 0.2s linear;
+        margin: 7% auto;
+        letter-spacing: 0.05em;
+    }
+    /* buttons hover */
+    button:hover {
+        transform: translatey(3px);
+        box-shadow: none;
+    }
+
+    /* buttons hover Animation */
+    button:hover {
+        animation: ani9 0.4s ease-in-out infinite alternate;
+    }
+
+    @keyframes ani9 {
+        0% {
+            transform: translateY(3px);
+        }
+
+        100% {
+            transform: translateY(5px);
+        }
+    }
+</style>
 {% endblock %}

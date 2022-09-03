@@ -4,10 +4,10 @@
 {% block contenido %}
 {% if user.is_superuser %}
 <div class="dropdown" style="margin-top: 10%;">
-    <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1"  data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
+    <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1"  data-bs-toggle="dropdown" aria-expanded="false">Administrar noticia</button>
     <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
-        <li><a  class="dropdown-item"  href="{% url 'apps.noticia:modificarNoticia' posts.pk %}">Modificar noticia</a></li>
-        <li><a  class="dropdown-item"  href="{% url 'apps.noticia:eliminarNoticia' posts.pk %}">Eliminar noticia</a></li>
+        <li><a  class="dropdown-item"  href="{% url 'apps.noticia:modificarNoticia' posts.pk %}">Modificar </a></li>
+        <li><a  class="dropdown-item"  href="{% url 'apps.noticia:eliminarNoticia' posts.pk %}">Eliminar </a></li>
     </ul>
 {% endif %}
 <section data-bs-version="5.1" class="image1 cid-tf6nPGwDQN" id="image1-q">
@@ -40,5 +40,36 @@
     
     </div>
 </section>
+<style>
+    button {
+        display: inline-block;
+        color: #252537;
+        outline: none;
+        border: none;
+        text-align: center;
+        transition: all 0.2s linear;
+        margin: 7% auto;
+        letter-spacing: 0.05em;
+    }
+    /* buttons hover */
+    button:hover {
+        transform: translatey(3px);
+        box-shadow: none;
+    }
 
+    /* buttons hover Animation */
+    button:hover {
+        animation: ani9 0.4s ease-in-out infinite alternate;
+    }
+
+    @keyframes ani9 {
+        0% {
+            transform: translateY(3px);
+        }
+
+        100% {
+            transform: translateY(5px);
+        }
+    }
+</style>
 {%endblock %}

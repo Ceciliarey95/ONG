@@ -64,7 +64,7 @@
                         </a>
                         {% if user.is_authenticated %}<h5 style="color:#fff; margin-top: 25%; margin-left: 5%;">
                             {{user.username}}</h5>
-                            {% endif %}
+                        {% endif %}
                     </span>
 
                 </div>
@@ -192,4 +192,82 @@
 </body>
 
 </html>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+    /* End Fonts */
+    /* Start Global rules */
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .input-item {
+        background: #fff;
+        color: #333;
+        padding: 14.5px 0px 15px 9px;
+        border-radius: 5px 0px 0px 5px;
+    }
+
+    /* inputs form  */
+    input[class="form-input"] {
+        width: 240px;
+        height: 50px;
+
+        margin-top: 2%;
+        padding: 15px;
+
+        font-size: 16px;
+        font-family: 'Abel', sans-serif;
+        color: #5E6472;
+
+        outline: none;
+        border: none;
+
+        border-radius: 0px 5px 5px 0px;
+        transition: 0.2s linear;
+
+    }
+
+    input[id="txt-input"] {
+        width: 250px;
+    }
+
+    /* focus  */
+    input:focus {
+        transform: translateX(-2px);
+        border-radius: 5px;
+    }
+
+    button {
+        display: inline-block;
+        color: #252537;
+        outline: none;
+        border: none;
+        text-align: center;
+        transition: all 0.2s linear;
+        margin: 7% auto;
+        letter-spacing: 0.05em;
+    }
+    /* buttons hover */
+    button:hover {
+        transform: translatey(3px);
+        box-shadow: none;
+    }
+
+    /* buttons hover Animation */
+    button:hover {
+        animation: ani9 0.4s ease-in-out infinite alternate;
+    }
+
+    @keyframes ani9 {
+        0% {
+            transform: translateY(3px);
+        }
+
+        100% {
+            transform: translateY(5px);
+        }
+    }
+</style>
 {% endblock %}

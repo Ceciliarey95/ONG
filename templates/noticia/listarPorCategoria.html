@@ -84,17 +84,16 @@
         {% for p in noticia %}
         <div class="timelines-container mt-4">
             <div class="row timeline-element first-separline mb-5">
-                <p style='text-align: center;'><strong style="display:contents;">{{p.categoria}}</strong></p>
                 <p style='text-align: center;' class="mbr-timeline-date display-7">{{p.fecha}}</p>
                 <div class="timeline-date col-12">
                     <div class="timeline-date-wrapper">
                     </div>
                 </div>
-                <span class="iconBackground"></span>
                 <div class="col-12 col-md-6">
                     <div class="image-wrapper">
                         {% if p.imagen %}<img class="d-block w-75" src="{{ p.imagen.url }}" title="">{% else %}<img src="noticia/default.png" >
                         {% endif %}
+                        <p class="btn btn-primary btn-sm item-categoria">{{p.categoria}}</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">

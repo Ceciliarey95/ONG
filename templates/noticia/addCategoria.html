@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
-{% block navbar %}
-{% endblock %}
 {% block contenido %}
 {% load static %}
-<div class="main-container">
+<div class="main-container" style="text-align: center; margin-top: 12%;">
     <form action="" method="POST" enctype="multipart/form-data">
         <!--input class="btn btn-primary" type="submit" value="Submit Post" -->
         <form method="post">{% csrf_token %}
