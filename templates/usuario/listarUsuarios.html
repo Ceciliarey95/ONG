@@ -2,29 +2,24 @@
 {% load static %}
 {% block contenido %}
 <section>
-    {% for item in usuarios %}
-    <div class="card" style="margin-top: 10%;">
+    <div style="margin-top: 8%; text-align: center;">
+        {% for item in usuarios %}
+        <div style="border-style:ridge;">
         {% if user.is_superuser %}
-        <button><a class="btn btn-primary" href="{% url 'apps.usuario:eliminarUsuario' item.pk %}">Eliminar usuario:
-                {{item.username}}</a></button>
+        <a class="btn btn-primary" href="{% url 'apps.usuario:eliminarUsuario' item.pk %}">Eliminar usuario:
+                {{item.username}}</a>
         {% endif %}
-        <div class="card-wrapper" style="border-style:double; text-align: center;">
-            <div class="row align-items-center">
-                <div class="col-12 col-md">
-                    <div class="card-box">
-                        <h4>
-                            <strong>Nombre: {{ item.first_name }}</strong>
-                        </h4>
-                        <h4>
-                            <strong>Apellido: {{ item.last_name }}</strong>
-                        </h4>
-                        <p>
-                            <i>Email: {{ item.email }}</i>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <h6>
+                <strong>Nombre: {{ item.first_name }}</strong>
+            </h6>
+            <h6>
+                <strong>Apellido: {{ item.last_name }}</strong>
+            </h6>
+            <p>
+                <i>Email: {{ item.email }}</i>
+            </p>
         </div>
     {% endfor %}
+    </div>
 </section>
 {% endblock %}
