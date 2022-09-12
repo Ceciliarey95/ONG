@@ -1,25 +1,37 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block contenido %}
-<section>
-    <div style="margin-top: 8%; text-align: center;">
+<section data-bs-version="5.1" class="team2 cid-tffTM7TT6b" xmlns="http://www.w3.org/1999/html" id="team2-18" >
+    
+
+    <h2 style="text-align:center; margin-top: 8%;"><strong>Usuarios:</strong></h2>
+    <div class="container" >
         {% for item in usuarios %}
-        <div style="border-style:ridge;">
-        {% if user.is_superuser %}
-        <a class="btn btn-primary" href="{% url 'apps.usuario:eliminarUsuario' item.pk %}">Eliminar usuario:
-                {{item.username}}</a>
-        {% endif %}
-            <h6>
-                <strong>Nombre: {{ item.first_name }}</strong>
-            </h6>
-            <h6>
-                <strong>Apellido: {{ item.last_name }}</strong>
-            </h6>
-            <p>
-                <i>Email: {{ item.email }}</i>
-            </p>
-        </div>
-    {% endfor %}
+        {% if user.is_superuser %}<a class="btn btn-primary" style="width: 100vh;" href="{% url 'apps.usuario:eliminarUsuario' item.pk %}">Eliminar usuario:{{item.username}}</a>{% endif %}
+        <div class="card" >
+            <div class="card-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="image-wrapper">
+                            <img src="{{ item.imagen.url }}" class="d-block w-50">  
+                        </div>
+                    </div>
+                    <div class="col-12 col-md">
+                        <div class="card-box">
+                            <h6>
+                                <strong>Nombre: {{ item.first_name }}</strong>
+                            </h6>
+                            <h6>
+                                <strong>Apellido: {{ item.last_name }}</strong>
+                            </h6>
+                            <p>
+                                <i>Email: {{ item.email }}</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock %}
