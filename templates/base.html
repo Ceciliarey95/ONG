@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
     <!-- Site made with Mobirise Website Builder v5.6.11, https://mobirise.com -->
     <meta charset="UTF-8">
@@ -48,6 +49,7 @@
 
 </head>
 {% block navbar %}
+
 <body>
 
     <section data-bs-version="5.1" class="menu cid-s48OLK6784" once="menu" id="menu1-h">
@@ -57,10 +59,11 @@
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="#">
-                            <img src="{% static 'assets/images/logo-modified-169x169.png' %}" alt="Mobirise Website Builder"
-                                style="height: 6.4rem;">
+                            <img src="{% static 'assets/images/logo-modified-169x169.png' %}"
+                                alt="Mobirise Website Builder" style="height: 6.4rem;">
                         </a>
-                        {% if user.is_authenticated %}<h5 style="color:#fff; margin-top: 25%; margin-left: 5%;">{{user.username}}</h5>{% endif %}
+                        {% if user.is_authenticated %}<h5 style="color:#fff; margin-top: 25%; margin-left: 5%;">
+                            {{user.username}}</h5>{% endif %}
                     </span>
 
                 </div>
@@ -76,9 +79,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'index' %}">Inicio</a>
+                        <li class="nav-item"><a class="nav-link link text-white display-4"
+                                href="{% url 'index' %}">Inicio</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'apps.noticia:listarNoticia2' %}">Blog</a>
+                        <li class="nav-item"><a class="nav-link link text-white display-4"
+                                href="{% url 'apps.noticia:listarNoticia2' %}">Blog</a>
                         </li>
                         <li class="nav-item"><a class="nav-link link text-white display-4"
                                 href="{% url 'nosotros' %}">Nosotros</a></li>
@@ -87,94 +92,99 @@
                     </ul>
                     {% if user.is_authenticated %}
                     <div class="navbar-buttons mbr-section-btn"><a class="btn btn-white display-4"
-                        href="{% url 'apps.usuario:logout' %}"><span
-                            class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
-                        Cerrar sesión</a>
+                            href="{% url 'apps.usuario:logout' %}"><span
+                                class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
+                            Cerrar sesión</a>
                     </div>
                     {%else%}
                     <div class="navbar-buttons mbr-section-btn"><a class="btn btn-white display-4"
                             href="{% url 'apps.usuario:login' %}"><span
                                 class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>
-                            Iniciar sesión</a> <a class="btn btn-white display-4" href="{% url 'apps.usuario:addUsuario' %}"><span
+                            Iniciar sesión</a> <a class="btn btn-white display-4"
+                            href="{% url 'apps.usuario:addUsuario' %}"><span
                                 class="mobi-mbri mobi-mbri-globe-2 mbr-iconfont mbr-iconfont-btn"></span>Registrarse</a>
                     </div>{% endif %}
                     {% if user.is_superuser %}
                     <div class="dropdown">
-                        <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1"  data-bs-toggle="dropdown" aria-expanded="false">Administrar</button>
-                        <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
-                            <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addNoticia' %}">Agregar noticia</a></li> 
-                            <li><a  class="dropdown-item"  href="{% url 'apps.noticia:addCategoria' %}">Agregar categoria</a></li>
-                            <li><a  class="dropdown-item"  href="{% url 'admin' %}">Panel admin</a></li>
+                        <button class="btn btn-outline-secondary dropdown-toggle " type="button"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">Administrar</button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{% url 'apps.noticia:addNoticia' %}">Agregar noticia</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'apps.noticia:addCategoria' %}">Agregar
+                                    categoria</a></li>
+                            <li><a class="dropdown-item" href="{% url 'admin' %}">Panel admin</a></li>
                         </ul>
-                    {% endif %}
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
         </nav>
-        
+
     </section>
-{% endblock %}
-{% block contenido %}
- <!--==========================
+    {% endblock %}
+    {% block contenido %}
+    <!--==========================
           index.html
   ============================-->
-{% endblock %}
+    {% endblock %}
     <a id="whatsapp" href="https://wa.me/543734403707?text=Hola!%20soy:" target="_blank">
-    <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+        <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
     </a>
-   <!--==========================
+    <!--==========================
          Footer Section
   ============================-->
-  <section data-bs-version="5.1" class="footer3 cid-s48P1Icc8J mbr-reveal" once="footers" id="footer3-i">
+    <section data-bs-version="5.1" class="footer3 cid-s48P1Icc8J mbr-reveal" once="footers" id="footer3-i">
 
 
 
 
 
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
 
-            <div class="row social-row">
-                <div class="social-list align-right pb-2">
-
-
+                <div class="row social-row">
+                    <div class="social-list align-right pb-2">
 
 
 
 
-                    <div class="soc-item">
-                        <a href="https://www.instagram.com/oportunidaddecambiomachagai/" target="_blank">
-                            <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="https://www.facebook.com/oportunidadecambio" target="_blank">
-                            <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                        </a>
+
+
+                        <div class="soc-item">
+                            <a href="https://www.instagram.com/oportunidaddecambiomachagai/" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/oportunidadecambio" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-4">© 2022 Oportunidad de
-                    cambio, Inc<br>Blog creado por Grupo 7 - Comisión 3 - Informatorio Chaco</p>
+                <div class="row row-copirayt">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-4">© 2022 Oportunidad de
+                        cambio, Inc<br>Blog creado por Grupo 7 - Comisión 3 - Informatorio Chaco</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section>
-    <a href="https://mobiri"></a>
-    <a href="https://mobiri"></a>
-</section>
-<script src="{% static 'assets/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'assets/parallax/jarallax.js' %}"></script>
-<script src="{% static 'assets/smoothscroll/smooth-scroll.js' %}"></script>
-<script src="{% static 'assets/ytplayer/index.js' %}"></script>
-<script src="{% static 'assets/dropdown/js/navbar-dropdown.js' %}"></script>
-<script src="{% static 'assets/theme/js/script.js' %}"></script>
+    </section>
+    <section>
+        <a href="https://mobiri"></a>
+        <a href="https://mobiri"></a>
+    </section>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/parallax/jarallax.js' %}"></script>
+    <script src="{% static 'assets/smoothscroll/smooth-scroll.js' %}"></script>
+    <script src="{% static 'assets/ytplayer/index.js' %}"></script>
+    <script src="{% static 'assets/dropdown/js/navbar-dropdown.js' %}"></script>
+    <script src="{% static 'assets/theme/js/script.js' %}"></script>
 
 
-<div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i
-            class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
-<input name="animation" type="hidden">
+    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i
+                class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
 </body>
 
 </html>

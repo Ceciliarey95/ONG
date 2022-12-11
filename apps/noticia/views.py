@@ -1,11 +1,8 @@
-from multiprocessing import context
-from sre_constants import CATEGORY_UNI_LINEBREAK
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Noticia, Categoria 
 from apps.comentario.models import Comentarios
-from apps.usuario.models import Usuario
 from apps.comentario.forms import ComentarioForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -41,22 +38,23 @@ class DeleteNoticia(LoginRequiredMixin,DeleteView):
 def ListarNoticia(request):
     noticia    = Noticia.objects.all()
     categoria  = Categoria.objects.all()
-    
+    template_name='noticia/listarNoticia2.html'
     context = {
         'noticia':noticia,
         'categoria': categoria,
     }
-    return render(request,'noticia/listarNoticia2.html',context)
+    return render(request,template_name,context)
 
 def ListarNoticiaPorCategoria(request,categoria):
     categoria2 = Categoria.objects.filter(nombre=categoria)
     noticia    = Noticia.objects.filter(categoria=categoria2[0].id)
     categorias  = Categoria.objects.all()
+    template_name='noticia/listarPorCategoria.html'
     context    = {
         'noticia' : noticia,
         'categoria':categorias
     }
-    return render(request,'noticia/listarPorCategoria.html',context)
+    return render(request,template_name,context)
 
 def noticias(request):
     noticias = Noticia.objects.get(all)
@@ -92,12 +90,4 @@ def ReadPost(request, id):
 		'comentarios': comentarios,
 	}
 	return render(request,'noticia/post.html', context)
-
-"""def darLike(request, pk):
-    noticia = get_object_or_404(Noticia, id=pk)
-    if request.user in noticia.likes.all():
-        noticia.likes.remove(request.user)
-    else:
-        noticia.likes.add(request.user.id)
-    return redirect('/noticia/'+str(noticia.id))
-"""
+    
