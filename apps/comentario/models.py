@@ -5,7 +5,7 @@ from django.conf import settings
 
 
 class Comentarios(models.Model):
-    usuario         = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=Usuario)
+    usuario         = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     noticia         = models.ForeignKey(Noticia, on_delete=models.CASCADE)
     texto           = models.TextField(verbose_name='Comentario')
     fecha           = models.DateTimeField(auto_now_add=True)
