@@ -9,8 +9,6 @@ from apps.usuario.models import Usuario
 from apps.comentario.forms import ComentarioForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
-
 class AddNoticia(LoginRequiredMixin, CreateView):
     model         = Noticia
     fields        = ['titulo', 'subtitulo','texto','categoria','imagen']
@@ -43,7 +41,7 @@ def ListarNoticia(request):
     categoria  = Categoria.objects.all()
     
     context = {
-        'noticia':noticia,
+        'noticias':noticia,
         'categoria': categoria,
     }
     return render(request,'noticia/listarNoticia2.html',context)
@@ -60,7 +58,7 @@ def ListarNoticiaPorCategoria(request,categoria):
 
 def noticias(request):
     noticias = Noticia.objects.get(all)
-    return render(noticias)
+    return render(request,noticias)
 
 def ExistePost(id):
     for i in noticias:
