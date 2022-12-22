@@ -18,7 +18,6 @@ def ListarUsuario(LoginRequiredMixin,request):
     }
     return render(request,'base.html',context)
 
-<<<<<<< HEAD
 def Usuarios(request):
 	usuarios = Usuario.objects.all()
 	context={
@@ -30,5 +29,3 @@ class DeleteUsuario(DeleteView):
 	model 		  = Usuario
 	template_name = 'usuario/usuario_delete.html'
 	success_url   = reverse_lazy('apps.usuario:listarUsuarios')
-=======
->>>>>>> c9db5b9352f281ad2b8045e219e87800e1eb3397
