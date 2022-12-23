@@ -3,73 +3,76 @@
 {% load static %}
 {% block contenido %}
 {% if user.is_superuser %}
-<div class="dropdown" style="margin-top: 10%;">
-    <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1"  data-bs-toggle="dropdown" aria-expanded="false">Administrar noticia</button>
-    <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
-        <li><a  class="dropdown-item"  href="{% url 'apps.noticia:modificarNoticia' posts.pk %}">Modificar </a></li>
-        <li><a  class="dropdown-item"  href="{% url 'apps.noticia:eliminarNoticia' posts.pk %}">Eliminar </a></li>
+<div class="dropdown" style="margin-top: 15%;">
+    <button class="btn btn-outline-secondary dropdown-toggle " type="button" id="dropdownMenuButton1"
+        data-bs-toggle="dropdown" aria-expanded="false">Administrar noticia</button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="{% url 'apps.noticia:modificarNoticia' posts.pk %}">Modificar </a></li>
+        <li><a class="dropdown-item" href="{% url 'apps.noticia:eliminarNoticia' posts.pk %}">Eliminar </a></li>
     </ul>
-{% endif %}
-<section data-bs-version="5.1" class="image1 cid-tf6nPGwDQN" id="image1-q">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    {% if posts.imagen %}<img src="{{ posts.imagen.url }}" class="d-block w-100">
-               {% else %}<img src="noticia/default.png"  >
-               {% endif %}
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">{{posts.fecha}}</p>
+    {% endif %}
+    <section data-bs-version="5.1" class="image1 cid-tf6nPGwDQN" id="image1-q">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="image-wrapper">
+                        {% if posts.imagen %}<img src="{{ posts.imagen.url }}" class="d-block w-100">
+                        {% else %}<img src="noticia/default.png">
+                        {% endif %}
+                        <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">{{posts.fecha}}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h2 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>{{posts.titulo}}</strong></h2>
-                    <h4 class="mbr-section-title mbr-fonts-style mb-3 "><i>{{posts.subtitulo}}</i></h4>
-                    <p class="mbr-text mbr-fonts-style display-7">{{posts.texto}}</p>
+                <div class="col-12 col-lg">
+                    <div class="text-wrapper">
+                        <h2 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>{{posts.titulo}}</strong>
+                        </h2>
+                        <h4 class="mbr-section-title mbr-fonts-style mb-3 "><i>{{posts.subtitulo}}</i></h4>
+                        <p class="mbr-text mbr-fonts-style display-7">{{posts.texto}}</p>
+                    </div>
                 </div>
+
             </div>
-            
         </div>
-    </div>
-    <div class="mb-3 display-7" style="text-align: center">
-        Comentarios: {{comentarios.count}}
-        {% include 'comentario/listarcomentario.html' %}
-    </div>
-    <div class="mb-3 display-7" >
-        {% include 'comentario/addcomentario.html' %}
-    
-    </div>
-</section>
-<style>
-    button {
-        display: inline-block;
-        color: #252537;
-        outline: none;
-        border: none;
-        text-align: center;
-        transition: all 0.2s linear;
-        margin: 7% auto;
-        letter-spacing: 0.05em;
-    }
-    /* buttons hover */
-    button:hover {
-        transform: translatey(3px);
-        box-shadow: none;
-    }
+        <div class="mb-3 display-7" style="text-align: center">
+            Comentarios: {{comentarios.count}}
+            {% include 'comentario/listarcomentario.html' %}
+        </div>
+        <div class="mb-3 display-7">
+            {% include 'comentario/addcomentario.html' %}
 
-    /* buttons hover Animation */
-    button:hover {
-        animation: ani9 0.4s ease-in-out infinite alternate;
-    }
-
-    @keyframes ani9 {
-        0% {
-            transform: translateY(3px);
+        </div>
+    </section>
+    <style>
+        button {
+            display: inline-block;
+            color: #252537;
+            outline: none;
+            border: none;
+            text-align: center;
+            transition: all 0.2s linear;
+            margin: 7% auto;
+            letter-spacing: 0.05em;
         }
 
-        100% {
-            transform: translateY(5px);
+        /* buttons hover */
+        button:hover {
+            transform: translatey(3px);
+            box-shadow: none;
         }
-    }
-</style>
-{%endblock %}
+
+        /* buttons hover Animation */
+        button:hover {
+            animation: ani9 0.4s ease-in-out infinite alternate;
+        }
+
+        @keyframes ani9 {
+            0% {
+                transform: translateY(3px);
+            }
+
+            100% {
+                transform: translateY(5px);
+            }
+        }
+    </style>
+    {%endblock %}

@@ -1,6 +1,7 @@
 from audioop import reverse
 from django.db import models
 from django.utils import timezone
+from apps.usuario.models import Usuario
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=250, null=False)
@@ -25,4 +26,6 @@ class Noticia(models.Model):
     def __str__(self):
         return self.titulo
 
-    
+class MeGusta(models.Model):
+    noticia = models.ForeignKey(Noticia, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)

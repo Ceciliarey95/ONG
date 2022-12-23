@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.urls import reverse
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Noticia, Categoria 
+from .models import Noticia, Categoria, MeGusta
 from apps.comentario.models import Comentarios
 from apps.comentario.forms import ComentarioForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
+
 
 class AddNoticia(LoginRequiredMixin, CreateView):
     model         = Noticia
@@ -32,16 +36,39 @@ class DeleteNoticia(LoginRequiredMixin,DeleteView):
 	template_name = 'noticia/noticia_confirm_delete.html'
 	success_url   = reverse_lazy('apps.noticia:listarNoticia2')
 
+class ListarNoticiasClase(ListView):
+    template_name= "noticia/listarNoticia2.html"
+    model = Noticia
+    context_object_name = "noticias"
+    paginate_by = 2
 
-def ListarNoticia(request):
+    def get_queryset(self):
+        noticias = Noticia.objects.all()
+        titulo_noticia = self.request.GET.get("Buscador")
+        if titulo_noticia:
+            noticias = noticias.filter(titulo__contains=titulo_noticia)
+
+        return noticias.order_by("titulo")
+   
+
+def dar_me_gusta(request, id_noticia):
+    mg = MeGusta.objects.filter(usuario=request.user, noticia__id=id_noticia)
+    if not mg:
+        mg = MeGusta.objects.create(usuario=request.user, noticia=Noticia.objects.get(id=id_noticia))
+    return HttpResponseRedirect(reverse("apps.noticia:listarNoticia2"))
+
+
+
+
+"""def ListarNoticia(request):
     noticia    = Noticia.objects.all()
     categoria  = Categoria.objects.all()
     template_name='noticia/listarNoticia2.html'
     context = {
-        'noticias':noticia,
+        'noticia':noticia,
         'categoria': categoria,
     }
-    return render(request,template_name,context)
+    return render(request,template_name,context)"""
 
 def ListarNoticiaPorCategoria(request,categoria):
     categoria2 = Categoria.objects.filter(nombre=categoria)

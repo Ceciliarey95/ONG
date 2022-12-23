@@ -11,5 +11,5 @@ urlpatterns = [
     path('addUsuario/', views.RegistrarUsuario.as_view(),name="addUsuario"),#Listo
     path('listarUsuarios/', views.Usuarios,name="listarUsuarios"),#Listo
     path('deleteUsuario/<pk>', views.DeleteUsuario.as_view(),name="eliminarUsuario"),#Listo
-
+    path('modificarUsuario/<pk>', views.UpdateUsuario.as_view(), name="modificarUsuario"),
 ]
